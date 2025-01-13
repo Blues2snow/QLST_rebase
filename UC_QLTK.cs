@@ -85,7 +85,7 @@ namespace QLST_rebase
             {
                 using (DataDBContext context = new())
                 {
-                    List<account> temp = context.accounts.Where(p => p._account.Contains(txtSearch.Text)).ToList();
+                    List<account> temp = context.accounts.Where(p => p._account.Contains(txtSearch.Content)).ToList();
                     foreach (account item in temp)
                     {
                         dgvTK.Rows.Insert(0, new object[] { item._account, item._password, item.staffId });

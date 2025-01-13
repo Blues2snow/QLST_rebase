@@ -92,7 +92,7 @@ namespace QLST_rebase
             {
                 using (DataDBContext context = new())
                 {
-                    List<goods> temp = context.goodss.Where(p => p.goodsName.Contains(txtSearch.Text)).ToList();
+                    List<goods> temp = context.goodss.Where(p => p.goodsName.Contains(txtSearch.Content)).ToList();
                     foreach (goods item in temp)
                     {
                         dgvHH.Rows.Insert(0, new object[] { item.goodsId, item.goodsName, item.entryDate, item.price, item.quantity, item.unit, item.suppiler, item.type });
