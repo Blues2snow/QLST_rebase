@@ -47,7 +47,7 @@ namespace QLST_rebase
                 var item = context.staffs.FirstOrDefault(p => p.staffId == int.Parse(txtMaNV.Text));
                 if (item != null)
                 {
-                    item.staffName = txtMaNV.Text;
+                    item.staffName = txtTenNV.Text;
                     item.birthDate = DateOnly.Parse(dtNgaySinh.Text);
                     item.gender = cbGioiTinh.Text;
                     item.address = txtDiaChi.Text;

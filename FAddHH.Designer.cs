@@ -68,7 +68,7 @@
             btnConfirm.ImageExpand = new Point(0, 0);
             btnConfirm.ImageOffset = new Point(0, 0);
             btnConfirm.ImageTint = Color.White;
-            btnConfirm.Location = new Point(528, 312);
+            btnConfirm.Location = new Point(552, 311);
             btnConfirm.Name = "btnConfirm";
             btnConfirm.NormalBackground = Color.FromArgb(255, 106, 0);
             btnConfirm.NormalOutline = Color.Empty;
@@ -141,10 +141,10 @@
             cuiLabel4.Content = "Số\\ lượng";
             cuiLabel4.Font = new Font("Segoe UI", 12F);
             cuiLabel4.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Left;
-            cuiLabel4.Location = new Point(411, 51);
+            cuiLabel4.Location = new Point(399, 54);
             cuiLabel4.Margin = new Padding(4, 3, 4, 3);
             cuiLabel4.Name = "cuiLabel4";
-            cuiLabel4.Size = new Size(122, 28);
+            cuiLabel4.Size = new Size(146, 28);
             cuiLabel4.TabIndex = 40;
             // 
             // cuiLabel3
@@ -152,10 +152,10 @@
             cuiLabel3.Content = "Đơn\\ vị\\ tính";
             cuiLabel3.Font = new Font("Segoe UI", 12F);
             cuiLabel3.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Left;
-            cuiLabel3.Location = new Point(411, 112);
+            cuiLabel3.Location = new Point(399, 115);
             cuiLabel3.Margin = new Padding(4, 3, 4, 3);
             cuiLabel3.Name = "cuiLabel3";
-            cuiLabel3.Size = new Size(122, 28);
+            cuiLabel3.Size = new Size(146, 28);
             cuiLabel3.TabIndex = 39;
             // 
             // cuiLabel2
@@ -163,10 +163,10 @@
             cuiLabel2.Content = "Loại\\ hàng";
             cuiLabel2.Font = new Font("Segoe UI", 12F);
             cuiLabel2.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Left;
-            cuiLabel2.Location = new Point(411, 239);
+            cuiLabel2.Location = new Point(399, 242);
             cuiLabel2.Margin = new Padding(4, 3, 4, 3);
             cuiLabel2.Name = "cuiLabel2";
-            cuiLabel2.Size = new Size(122, 28);
+            cuiLabel2.Size = new Size(146, 28);
             cuiLabel2.TabIndex = 38;
             // 
             // cuiLabel1
@@ -174,15 +174,15 @@
             cuiLabel1.Content = "Nhà\\ cung\\ cấp";
             cuiLabel1.Font = new Font("Segoe UI", 12F);
             cuiLabel1.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Left;
-            cuiLabel1.Location = new Point(411, 177);
+            cuiLabel1.Location = new Point(399, 180);
             cuiLabel1.Margin = new Padding(4, 3, 4, 3);
             cuiLabel1.Name = "cuiLabel1";
-            cuiLabel1.Size = new Size(122, 28);
+            cuiLabel1.Size = new Size(146, 28);
             cuiLabel1.TabIndex = 37;
             // 
             // txtDonViTinh
             // 
-            txtDonViTinh.Location = new Point(528, 115);
+            txtDonViTinh.Location = new Point(552, 114);
             txtDonViTinh.Name = "txtDonViTinh";
             txtDonViTinh.Size = new Size(190, 25);
             txtDonViTinh.StateActive.Content.Color1 = Color.Black;
@@ -218,7 +218,7 @@
             cbLoaiHang.FormattingEnabled = true;
             cbLoaiHang.ItemHeight = 20;
             cbLoaiHang.Items.AddRange(new object[] { "Thực phẩm", "Hoá phẩm" });
-            cbLoaiHang.Location = new Point(528, 241);
+            cbLoaiHang.Location = new Point(552, 240);
             cbLoaiHang.Name = "cbLoaiHang";
             cbLoaiHang.Size = new Size(190, 26);
             cbLoaiHang.TabIndex = 32;
@@ -242,7 +242,7 @@
             // 
             // txtNhaCC
             // 
-            txtNhaCC.Location = new Point(528, 180);
+            txtNhaCC.Location = new Point(552, 179);
             txtNhaCC.Name = "txtNhaCC";
             txtNhaCC.Size = new Size(190, 25);
             txtNhaCC.StateActive.Content.Color1 = Color.Black;
@@ -260,13 +260,12 @@
             NmrSoLuong.EnabledCalc = true;
             NmrSoLuong.Font = new Font("Segoe UI", 10F);
             NmrSoLuong.ForeColor = Color.Black;
-            NmrSoLuong.Location = new Point(528, 52);
+            NmrSoLuong.Location = new Point(552, 51);
             NmrSoLuong.Max = 100;
             NmrSoLuong.Min = 0;
             NmrSoLuong.Name = "NmrSoLuong";
             NmrSoLuong.Size = new Size(190, 27);
             NmrSoLuong.TabIndex = 48;
-            NmrSoLuong.Text = "foxNumeric1";
             NmrSoLuong.Value = 0;
             // 
             // FAddHH

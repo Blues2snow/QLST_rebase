@@ -275,33 +275,33 @@
             // uC_qlnv1
             // 
             uC_qlnv1.Dock = DockStyle.Fill;
-            uC_qlnv1.Location = new Point(0, 0);
+            uC_qlnv1.Location = new Point(190, 0);
             uC_qlnv1.Name = "uC_qlnv1";
-            uC_qlnv1.Size = new Size(1095, 634);
+            uC_qlnv1.Size = new Size(905, 634);
             uC_qlnv1.TabIndex = 1;
             // 
             // uC_qltk1
             // 
             uC_qltk1.Dock = DockStyle.Fill;
-            uC_qltk1.Location = new Point(0, 0);
+            uC_qltk1.Location = new Point(190, 0);
             uC_qltk1.Name = "uC_qltk1";
-            uC_qltk1.Size = new Size(1095, 634);
+            uC_qltk1.Size = new Size(905, 634);
             uC_qltk1.TabIndex = 2;
             // 
             // uC_qlhh1
             // 
             uC_qlhh1.Dock = DockStyle.Fill;
-            uC_qlhh1.Location = new Point(0, 0);
+            uC_qlhh1.Location = new Point(190, 0);
             uC_qlhh1.Name = "uC_qlhh1";
-            uC_qlhh1.Size = new Size(1095, 634);
+            uC_qlhh1.Size = new Size(905, 634);
             uC_qlhh1.TabIndex = 3;
             // 
             // uC_tk1
             // 
             uC_tk1.Dock = DockStyle.Fill;
-            uC_tk1.Location = new Point(0, 0);
+            uC_tk1.Location = new Point(190, 0);
             uC_tk1.Name = "uC_tk1";
-            uC_tk1.Size = new Size(1095, 634);
+            uC_tk1.Size = new Size(905, 634);
             uC_tk1.TabIndex = 4;
             // 
             // FQuanLy
@@ -309,11 +309,11 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1095, 634);
-            Controls.Add(panel1);
             Controls.Add(uC_qlnv1);
             Controls.Add(uC_tk1);
             Controls.Add(uC_qltk1);
             Controls.Add(uC_qlhh1);
+            Controls.Add(panel1);
             Name = "FQuanLy";
             Text = "Quản lý";
             panel1.ResumeLayout(false);

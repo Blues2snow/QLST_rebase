@@ -33,6 +33,14 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             dgvNV = new ReaLTaiizor.Controls.PoisonDataGridView();
+            cuiLabel1 = new CuoreUI.Controls.cuiLabel();
+            btnAdd = new CuoreUI.Controls.cuiButton();
+            txtSearch = new CuoreUI.Controls.cuiTextBox2();
+            cuiLabel2 = new CuoreUI.Controls.cuiLabel();
+            lbDate = new CuoreUI.Controls.cuiLabel();
+            lbTime = new CuoreUI.Controls.cuiLabel();
+            pictureBox1 = new PictureBox();
+            timer1 = new System.Windows.Forms.Timer(components);
             staffId = new DataGridViewTextBoxColumn();
             staffName = new DataGridViewTextBoxColumn();
             birthDate = new DataGridViewTextBoxColumn();
@@ -44,14 +52,6 @@
             position = new DataGridViewTextBoxColumn();
             Edit = new DataGridViewImageColumn();
             Delete = new DataGridViewImageColumn();
-            cuiLabel1 = new CuoreUI.Controls.cuiLabel();
-            btnAdd = new CuoreUI.Controls.cuiButton();
-            txtSearch = new CuoreUI.Controls.cuiTextBox2();
-            cuiLabel2 = new CuoreUI.Controls.cuiLabel();
-            lbDate = new CuoreUI.Controls.cuiLabel();
-            lbTime = new CuoreUI.Controls.cuiLabel();
-            pictureBox1 = new PictureBox();
-            timer1 = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)dgvNV).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -105,78 +105,6 @@
             dgvNV.Size = new Size(905, 466);
             dgvNV.TabIndex = 1;
             dgvNV.CellClick += dgvNV_CellClick;
-            // 
-            // staffId
-            // 
-            staffId.HeaderText = "Mã nhân viên";
-            staffId.Name = "staffId";
-            staffId.ReadOnly = true;
-            // 
-            // staffName
-            // 
-            staffName.HeaderText = "Tên nhân viên";
-            staffName.Name = "staffName";
-            staffName.ReadOnly = true;
-            // 
-            // birthDate
-            // 
-            birthDate.HeaderText = "Ngày sinh";
-            birthDate.Name = "birthDate";
-            birthDate.ReadOnly = true;
-            // 
-            // gender
-            // 
-            gender.HeaderText = "Giới tính";
-            gender.Name = "gender";
-            gender.ReadOnly = true;
-            // 
-            // address
-            // 
-            address.HeaderText = "Địa chỉ";
-            address.Name = "address";
-            address.ReadOnly = true;
-            // 
-            // salary
-            // 
-            salary.HeaderText = "Lương";
-            salary.Name = "salary";
-            salary.ReadOnly = true;
-            // 
-            // email
-            // 
-            email.HeaderText = "Email";
-            email.Name = "email";
-            email.ReadOnly = true;
-            // 
-            // phoneNumber
-            // 
-            phoneNumber.HeaderText = "SDT";
-            phoneNumber.Name = "phoneNumber";
-            phoneNumber.ReadOnly = true;
-            // 
-            // position
-            // 
-            position.HeaderText = "Chức vụ";
-            position.Name = "position";
-            position.ReadOnly = true;
-            // 
-            // Edit
-            // 
-            Edit.HeaderText = "";
-            Edit.Image = Properties.Resources.edit;
-            Edit.Name = "Edit";
-            Edit.ReadOnly = true;
-            Edit.Resizable = DataGridViewTriState.True;
-            Edit.SortMode = DataGridViewColumnSortMode.Automatic;
-            // 
-            // Delete
-            // 
-            Delete.HeaderText = "";
-            Delete.Image = Properties.Resources.delete;
-            Delete.Name = "Delete";
-            Delete.ReadOnly = true;
-            Delete.Resizable = DataGridViewTriState.True;
-            Delete.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
             // cuiLabel1
             // 
@@ -299,6 +227,89 @@
             // 
             timer1.Tick += timer1_Tick;
             // 
+            // staffId
+            // 
+            staffId.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            staffId.HeaderText = "Mã nhân viên";
+            staffId.Name = "staffId";
+            staffId.ReadOnly = true;
+            // 
+            // staffName
+            // 
+            staffName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            staffName.HeaderText = "Tên nhân viên";
+            staffName.Name = "staffName";
+            staffName.ReadOnly = true;
+            // 
+            // birthDate
+            // 
+            birthDate.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            birthDate.HeaderText = "Ngày sinh";
+            birthDate.Name = "birthDate";
+            birthDate.ReadOnly = true;
+            // 
+            // gender
+            // 
+            gender.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            gender.HeaderText = "Giới tính";
+            gender.Name = "gender";
+            gender.ReadOnly = true;
+            // 
+            // address
+            // 
+            address.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            address.HeaderText = "Địa chỉ";
+            address.Name = "address";
+            address.ReadOnly = true;
+            // 
+            // salary
+            // 
+            salary.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            salary.HeaderText = "Lương";
+            salary.Name = "salary";
+            salary.ReadOnly = true;
+            // 
+            // email
+            // 
+            email.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            email.HeaderText = "Email";
+            email.Name = "email";
+            email.ReadOnly = true;
+            // 
+            // phoneNumber
+            // 
+            phoneNumber.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            phoneNumber.HeaderText = "SDT";
+            phoneNumber.Name = "phoneNumber";
+            phoneNumber.ReadOnly = true;
+            // 
+            // position
+            // 
+            position.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            position.HeaderText = "Chức vụ";
+            position.Name = "position";
+            position.ReadOnly = true;
+            // 
+            // Edit
+            // 
+            Edit.HeaderText = "";
+            Edit.Image = Properties.Resources.edit;
+            Edit.Name = "Edit";
+            Edit.ReadOnly = true;
+            Edit.Resizable = DataGridViewTriState.True;
+            Edit.SortMode = DataGridViewColumnSortMode.Automatic;
+            Edit.Width = 50;
+            // 
+            // Delete
+            // 
+            Delete.HeaderText = "";
+            Delete.Image = Properties.Resources.delete;
+            Delete.Name = "Delete";
+            Delete.ReadOnly = true;
+            Delete.Resizable = DataGridViewTriState.True;
+            Delete.SortMode = DataGridViewColumnSortMode.Automatic;
+            Delete.Width = 50;
+            // 
             // UC_QLNV
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -329,6 +340,7 @@
         private CuoreUI.Controls.cuiLabel lbDate;
         private CuoreUI.Controls.cuiLabel lbTime;
         private PictureBox pictureBox1;
+        private System.Windows.Forms.Timer timer1;
         private DataGridViewTextBoxColumn staffId;
         private DataGridViewTextBoxColumn staffName;
         private DataGridViewTextBoxColumn birthDate;
@@ -340,6 +352,5 @@
         private DataGridViewTextBoxColumn position;
         private DataGridViewImageColumn Edit;
         private DataGridViewImageColumn Delete;
-        private System.Windows.Forms.Timer timer1;
     }
 }

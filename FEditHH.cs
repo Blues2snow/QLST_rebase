@@ -46,7 +46,7 @@ namespace QLST_rebase
                 var goods = context.goodss.FirstOrDefault(p => p.goodsId == int.Parse(txtMaHang.Text));
                 if (goods != null)
                 {
-                    goods.goodsName = txtMaHang.Text;
+                    goods.goodsName = txtTenHang.Text;
                     goods.entryDate = DateOnly.Parse(dtNgayNhap.Text);
                     goods.price = double.Parse(txtGiaTien.Text);
                     goods.quantity = NmrSoLuong.Value;

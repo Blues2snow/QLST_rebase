@@ -40,6 +40,7 @@ namespace QLST_rebase
         }
         private void LoadDgv()
         {
+            this.dgvTK.Rows.Clear();
             using (DataDBContext context = new())
             {
                 List<account> temp = context.accounts.ToList();

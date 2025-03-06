@@ -157,7 +157,7 @@
             cuiLabel4.Location = new Point(410, 48);
             cuiLabel4.Margin = new Padding(4, 3, 4, 3);
             cuiLabel4.Name = "cuiLabel4";
-            cuiLabel4.Size = new Size(122, 28);
+            cuiLabel4.Size = new Size(100, 28);
             cuiLabel4.TabIndex = 40;
             // 
             // cuiLabel3
@@ -168,7 +168,7 @@
             cuiLabel3.Location = new Point(410, 109);
             cuiLabel3.Margin = new Padding(4, 3, 4, 3);
             cuiLabel3.Name = "cuiLabel3";
-            cuiLabel3.Size = new Size(122, 28);
+            cuiLabel3.Size = new Size(100, 28);
             cuiLabel3.TabIndex = 39;
             // 
             // cuiLabel2
@@ -179,7 +179,7 @@
             cuiLabel2.Location = new Point(410, 236);
             cuiLabel2.Margin = new Padding(4, 3, 4, 3);
             cuiLabel2.Name = "cuiLabel2";
-            cuiLabel2.Size = new Size(122, 28);
+            cuiLabel2.Size = new Size(100, 28);
             cuiLabel2.TabIndex = 38;
             // 
             // cuiLabel1
@@ -190,7 +190,7 @@
             cuiLabel1.Location = new Point(410, 174);
             cuiLabel1.Margin = new Padding(4, 3, 4, 3);
             cuiLabel1.Name = "cuiLabel1";
-            cuiLabel1.Size = new Size(122, 28);
+            cuiLabel1.Size = new Size(100, 28);
             cuiLabel1.TabIndex = 37;
             // 
             // txtEmail

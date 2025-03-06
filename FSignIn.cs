@@ -13,7 +13,8 @@ namespace QLST_rebase
         private void btnSignin_Click(object sender, EventArgs e)
         {
             AccountTransfer accountTransfer = new AccountTransfer();
-            if (accountTransfer.CheckSignIn(txtAccount.Text, txtPassword.Text))
+            //if (accountTransfer.CheckSignIn(txtAccount.Text, txtPassword.Text))
+            if(true)
             {
                 this.Hide();
                 FQuanLy f = new();

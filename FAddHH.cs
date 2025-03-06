@@ -30,7 +30,7 @@ namespace QLST_rebase
                         goodsName = txtTenHang.Text,
                         entryDate = DateOnly.Parse(dtNgayNhap.Text),
                         price = Double.Parse(txtGiaTien.Text),
-                        quantity = int.Parse(NmrSoLuong.Text),
+                        quantity = NmrSoLuong.Value,
                         unit = txtDonViTinh.Text,
                         suppiler = txtNhaCC.Text,
                         type = cbLoaiHang.Text

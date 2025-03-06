@@ -34,7 +34,6 @@
             cbChucVu = new ReaLTaiizor.Controls.AloneComboBox();
             txtTenNV = new Krypton.Toolkit.KryptonTextBox();
             txtLuong = new Krypton.Toolkit.KryptonTextBox();
-            txtMaNV = new Krypton.Toolkit.KryptonTextBox();
             txtEmail = new Krypton.Toolkit.KryptonTextBox();
             cuiLabel1 = new CuoreUI.Controls.cuiLabel();
             cuiLabel2 = new CuoreUI.Controls.cuiLabel();
@@ -44,7 +43,6 @@
             cuiLabel6 = new CuoreUI.Controls.cuiLabel();
             cuiLabel7 = new CuoreUI.Controls.cuiLabel();
             cuiLabel8 = new CuoreUI.Controls.cuiLabel();
-            cuiLabel9 = new CuoreUI.Controls.cuiLabel();
             txtDiaChi = new Krypton.Toolkit.KryptonTextBox();
             btnConfirm = new CuoreUI.Controls.cuiButton();
             SuspendLayout();
@@ -66,7 +64,7 @@
             dtNgaySinh.CalendarTitleBackColor = Color.Black;
             dtNgaySinh.CalendarTitleForeColor = Color.Black;
             dtNgaySinh.CalendarTrailingForeColor = Color.Black;
-            dtNgaySinh.Location = new Point(178, 176);
+            dtNgaySinh.Location = new Point(181, 115);
             dtNgaySinh.MinimumSize = new Size(0, 29);
             dtNgaySinh.Name = "dtNgaySinh";
             dtNgaySinh.Size = new Size(190, 29);
@@ -85,7 +83,7 @@
             cbGioiTinh.FormattingEnabled = true;
             cbGioiTinh.ItemHeight = 20;
             cbGioiTinh.Items.AddRange(new object[] { "Nam", "Nữ" });
-            cbGioiTinh.Location = new Point(178, 241);
+            cbGioiTinh.Location = new Point(181, 180);
             cbGioiTinh.Name = "cbGioiTinh";
             cbGioiTinh.Size = new Size(190, 26);
             cbGioiTinh.TabIndex = 12;
@@ -107,7 +105,7 @@
             // 
             // txtTenNV
             // 
-            txtTenNV.Location = new Point(178, 115);
+            txtTenNV.Location = new Point(181, 54);
             txtTenNV.Name = "txtTenNV";
             txtTenNV.Size = new Size(190, 25);
             txtTenNV.StateActive.Content.Color1 = Color.Black;
@@ -122,16 +120,6 @@
             txtLuong.StateActive.Content.Color1 = Color.Black;
             txtLuong.StateActive.Content.Font = new Font("Segoe UI", 10F);
             txtLuong.TabIndex = 15;
-            // 
-            // txtMaNV
-            // 
-            txtMaNV.Location = new Point(178, 54);
-            txtMaNV.Name = "txtMaNV";
-            txtMaNV.ReadOnly = true;
-            txtMaNV.Size = new Size(190, 25);
-            txtMaNV.StateActive.Content.Color1 = Color.Black;
-            txtMaNV.StateActive.Content.Font = new Font("Segoe UI", 10F);
-            txtMaNV.TabIndex = 16;
             // 
             // txtEmail
             // 
@@ -150,7 +138,7 @@
             cuiLabel1.Location = new Point(409, 177);
             cuiLabel1.Margin = new Padding(4, 3, 4, 3);
             cuiLabel1.Name = "cuiLabel1";
-            cuiLabel1.Size = new Size(122, 28);
+            cuiLabel1.Size = new Size(78, 28);
             cuiLabel1.TabIndex = 18;
             // 
             // cuiLabel2
@@ -161,7 +149,7 @@
             cuiLabel2.Location = new Point(409, 239);
             cuiLabel2.Margin = new Padding(4, 3, 4, 3);
             cuiLabel2.Name = "cuiLabel2";
-            cuiLabel2.Size = new Size(122, 28);
+            cuiLabel2.Size = new Size(78, 28);
             cuiLabel2.TabIndex = 19;
             // 
             // cuiLabel3
@@ -172,7 +160,7 @@
             cuiLabel3.Location = new Point(409, 112);
             cuiLabel3.Margin = new Padding(4, 3, 4, 3);
             cuiLabel3.Name = "cuiLabel3";
-            cuiLabel3.Size = new Size(122, 28);
+            cuiLabel3.Size = new Size(78, 28);
             cuiLabel3.TabIndex = 20;
             // 
             // cuiLabel4
@@ -183,7 +171,7 @@
             cuiLabel4.Location = new Point(409, 51);
             cuiLabel4.Margin = new Padding(4, 3, 4, 3);
             cuiLabel4.Name = "cuiLabel4";
-            cuiLabel4.Size = new Size(122, 28);
+            cuiLabel4.Size = new Size(78, 28);
             cuiLabel4.TabIndex = 21;
             // 
             // cuiLabel5
@@ -191,10 +179,10 @@
             cuiLabel5.Content = "Địa\\ chỉ";
             cuiLabel5.Font = new Font("Segoe UI", 12F);
             cuiLabel5.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Left;
-            cuiLabel5.Location = new Point(26, 309);
+            cuiLabel5.Location = new Point(29, 248);
             cuiLabel5.Margin = new Padding(4, 3, 4, 3);
             cuiLabel5.Name = "cuiLabel5";
-            cuiLabel5.Size = new Size(122, 28);
+            cuiLabel5.Size = new Size(117, 28);
             cuiLabel5.TabIndex = 22;
             // 
             // cuiLabel6
@@ -202,10 +190,10 @@
             cuiLabel6.Content = "Giới\\ tính";
             cuiLabel6.Font = new Font("Segoe UI", 12F);
             cuiLabel6.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Left;
-            cuiLabel6.Location = new Point(26, 239);
+            cuiLabel6.Location = new Point(29, 178);
             cuiLabel6.Margin = new Padding(4, 3, 4, 3);
             cuiLabel6.Name = "cuiLabel6";
-            cuiLabel6.Size = new Size(122, 28);
+            cuiLabel6.Size = new Size(117, 28);
             cuiLabel6.TabIndex = 23;
             // 
             // cuiLabel7
@@ -213,10 +201,10 @@
             cuiLabel7.Content = "Ngày\\ sinh";
             cuiLabel7.Font = new Font("Segoe UI", 12F);
             cuiLabel7.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Left;
-            cuiLabel7.Location = new Point(26, 177);
+            cuiLabel7.Location = new Point(29, 116);
             cuiLabel7.Margin = new Padding(4, 3, 4, 3);
             cuiLabel7.Name = "cuiLabel7";
-            cuiLabel7.Size = new Size(122, 28);
+            cuiLabel7.Size = new Size(117, 28);
             cuiLabel7.TabIndex = 24;
             // 
             // cuiLabel8
@@ -224,26 +212,15 @@
             cuiLabel8.Content = "Tên\\ nhân\\ viên";
             cuiLabel8.Font = new Font("Segoe UI", 12F);
             cuiLabel8.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Left;
-            cuiLabel8.Location = new Point(26, 112);
+            cuiLabel8.Location = new Point(29, 51);
             cuiLabel8.Margin = new Padding(4, 3, 4, 3);
             cuiLabel8.Name = "cuiLabel8";
-            cuiLabel8.Size = new Size(122, 28);
+            cuiLabel8.Size = new Size(117, 28);
             cuiLabel8.TabIndex = 25;
-            // 
-            // cuiLabel9
-            // 
-            cuiLabel9.Content = "Mã\\ nhân\\ viên";
-            cuiLabel9.Font = new Font("Segoe UI", 12F);
-            cuiLabel9.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Left;
-            cuiLabel9.Location = new Point(26, 51);
-            cuiLabel9.Margin = new Padding(4, 3, 4, 3);
-            cuiLabel9.Name = "cuiLabel9";
-            cuiLabel9.Size = new Size(122, 28);
-            cuiLabel9.TabIndex = 26;
             // 
             // txtDiaChi
             // 
-            txtDiaChi.Location = new Point(178, 312);
+            txtDiaChi.Location = new Point(181, 251);
             txtDiaChi.Name = "txtDiaChi";
             txtDiaChi.Size = new Size(190, 25);
             txtDiaChi.StateActive.Content.Color1 = Color.Black;
@@ -293,7 +270,6 @@
             ClientSize = new Size(800, 400);
             Controls.Add(btnConfirm);
             Controls.Add(txtDiaChi);
-            Controls.Add(cuiLabel9);
             Controls.Add(cuiLabel8);
             Controls.Add(cuiLabel7);
             Controls.Add(cuiLabel6);
@@ -303,7 +279,6 @@
             Controls.Add(cuiLabel2);
             Controls.Add(cuiLabel1);
             Controls.Add(txtEmail);
-            Controls.Add(txtMaNV);
             Controls.Add(txtLuong);
             Controls.Add(txtTenNV);
             Controls.Add(cbChucVu);
@@ -325,7 +300,6 @@
         private ReaLTaiizor.Controls.AloneComboBox cbChucVu;
         private Krypton.Toolkit.KryptonTextBox txtTenNV;
         private Krypton.Toolkit.KryptonTextBox txtLuong;
-        private Krypton.Toolkit.KryptonTextBox txtMaNV;
         private Krypton.Toolkit.KryptonTextBox txtEmail;
         private CuoreUI.Controls.cuiLabel cuiLabel1;
         private CuoreUI.Controls.cuiLabel cuiLabel2;
@@ -335,7 +309,6 @@
         private CuoreUI.Controls.cuiLabel cuiLabel6;
         private CuoreUI.Controls.cuiLabel cuiLabel7;
         private CuoreUI.Controls.cuiLabel cuiLabel8;
-        private CuoreUI.Controls.cuiLabel cuiLabel9;
         private Krypton.Toolkit.KryptonTextBox txtDiaChi;
         private CuoreUI.Controls.cuiButton btnConfirm;
     }
