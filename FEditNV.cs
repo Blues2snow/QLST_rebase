@@ -42,22 +42,28 @@ namespace QLST_rebase
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            using (DataDBContext context = new())
+            try
             {
-                var item = context.staffs.FirstOrDefault(p => p.staffId == int.Parse(txtMaNV.Text));
-                if (item != null)
+                using (DataDBContext context = new())
                 {
-                    item.staffName = txtTenNV.Text;
-                    item.birthDate = DateOnly.Parse(dtNgaySinh.Text);
-                    item.gender = cbGioiTinh.Text;
-                    item.address = txtDiaChi.Text;
-                    item.salary = double.Parse(txtLuong.Text);
-                    item.email = txtEmail.Text;
-                    item.phoneNumber = txtSDT.Text;
-                    item.position = cbChucVu.Text;
-                    context.SaveChanges();
-                    MessageBox.Show("Thêm thành công!");
+                    var item = context.staffs.FirstOrDefault(p => p.staffId == int.Parse(txtMaNV.Text));
+                    if (item != null)
+                    {
+                        item.staffName = txtTenNV.Text;
+                        item.birthDate = DateOnly.Parse(dtNgaySinh.Text);
+                        item.gender = cbGioiTinh.Text;
+                        item.address = txtDiaChi.Text;
+                        item.salary = double.Parse(txtLuong.Text);
+                        item.email = txtEmail.Text;
+                        item.phoneNumber = txtSDT.Text;
+                        item.position = cbChucVu.Text;
+                        context.SaveChanges();
+                        MessageBox.Show("Sửa thành công!");
+                    }
                 }
+            } catch (Exception)
+            {
+                MessageBox.Show("Vui lòng kiểm tra lại thông tin");
             }
         }
     }

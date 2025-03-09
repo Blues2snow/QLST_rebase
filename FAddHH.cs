@@ -30,16 +30,17 @@ namespace QLST_rebase
                         goodsName = txtTenHang.Text,
                         entryDate = DateOnly.Parse(dtNgayNhap.Text),
                         price = Double.Parse(txtGiaTien.Text),
-                        quantity = NmrSoLuong.Value,
+                        quantity = int.Parse(NmrSoLuong.Value.ToString()),
                         unit = txtDonViTinh.Text,
                         suppiler = txtNhaCC.Text,
                         type = cbLoaiHang.Text
                     };
                     context.goodss.Add(goods);
                     context.SaveChanges();
+                    MessageBox.Show("Thêm thành công!");
                 }
             }
-            catch (SqlException)
+            catch (Exception)
             {
                 MessageBox.Show("Vui lòng kiểm tra lại thông tin");
             }

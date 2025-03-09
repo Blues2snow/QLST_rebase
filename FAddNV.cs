@@ -28,14 +28,14 @@ namespace QLST_rebase
                 {
                     var staff = new staff //3
                     {
-                        staffName = txtTenNV.ToString(),
-                        birthDate = DateOnly.Parse(dtNgaySinh.ToString()), //4
-                        gender = cbGioiTinh.ToString(),
-                        address = txtDiaChi.ToString(),
-                        salary = double.Parse(txtLuong.ToString()), //5
-                        email = txtEmail.ToString(),
-                        phoneNumber = txtSDT.ToString(),
-                        position = cbChucVu.ToString() //6 (cac text)
+                        staffName = txtTenNV.Text,
+                        birthDate = DateOnly.Parse(dtNgaySinh.Text), //4
+                        gender = cbGioiTinh.Text,
+                        address = txtDiaChi.Text,
+                        salary = double.Parse(txtLuong.Text), //5
+                        email = txtEmail.Text,
+                        phoneNumber = txtSDT.Text,
+                        position = cbChucVu.Text //6 (cac text)
                     };
                     context.staffs.Add(staff); //7
                     context.SaveChanges();//8

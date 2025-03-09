@@ -45,8 +45,8 @@
             txtTenNV = new Krypton.Toolkit.KryptonTextBox();
             cbChucVu = new ReaLTaiizor.Controls.AloneComboBox();
             cbGioiTinh = new ReaLTaiizor.Controls.AloneComboBox();
-            dtNgaySinh = new ReaLTaiizor.Controls.PoisonDateTime();
             txtSDT = new Krypton.Toolkit.KryptonTextBox();
+            dtNgaySinh = new DateTimePicker();
             SuspendLayout();
             // 
             // btnConfirm
@@ -70,7 +70,7 @@
             btnConfirm.ImageExpand = new Point(0, 0);
             btnConfirm.ImageOffset = new Point(0, 0);
             btnConfirm.ImageTint = Color.White;
-            btnConfirm.Location = new Point(527, 309);
+            btnConfirm.Location = new Point(527, 300);
             btnConfirm.Name = "btnConfirm";
             btnConfirm.NormalBackground = Color.FromArgb(255, 106, 0);
             btnConfirm.NormalOutline = Color.Empty;
@@ -81,18 +81,18 @@
             btnConfirm.PressedOutline = Color.Empty;
             btnConfirm.Rounding = new Padding(8);
             btnConfirm.Size = new Size(159, 36);
-            btnConfirm.TabIndex = 47;
+            btnConfirm.TabIndex = 9;
             btnConfirm.TextOffset = new Point(0, 0);
             btnConfirm.Click += btnConfirm_Click;
             // 
             // txtDiaChi
             // 
-            txtDiaChi.Location = new Point(179, 309);
+            txtDiaChi.Location = new Point(179, 300);
             txtDiaChi.Name = "txtDiaChi";
             txtDiaChi.Size = new Size(190, 25);
             txtDiaChi.StateActive.Content.Color1 = Color.Black;
             txtDiaChi.StateActive.Content.Font = new Font("Segoe UI", 10F);
-            txtDiaChi.TabIndex = 46;
+            txtDiaChi.TabIndex = 4;
             // 
             // cuiLabel9
             // 
@@ -121,7 +121,7 @@
             cuiLabel7.Content = "Ngày\\ sinh";
             cuiLabel7.Font = new Font("Segoe UI", 12F);
             cuiLabel7.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Left;
-            cuiLabel7.Location = new Point(27, 174);
+            cuiLabel7.Location = new Point(27, 169);
             cuiLabel7.Margin = new Padding(4, 3, 4, 3);
             cuiLabel7.Name = "cuiLabel7";
             cuiLabel7.Size = new Size(122, 28);
@@ -132,7 +132,7 @@
             cuiLabel6.Content = "Giới\\ tính";
             cuiLabel6.Font = new Font("Segoe UI", 12F);
             cuiLabel6.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Left;
-            cuiLabel6.Location = new Point(27, 236);
+            cuiLabel6.Location = new Point(27, 231);
             cuiLabel6.Margin = new Padding(4, 3, 4, 3);
             cuiLabel6.Name = "cuiLabel6";
             cuiLabel6.Size = new Size(122, 28);
@@ -143,7 +143,7 @@
             cuiLabel5.Content = "Địa\\ chỉ";
             cuiLabel5.Font = new Font("Segoe UI", 12F);
             cuiLabel5.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Left;
-            cuiLabel5.Location = new Point(27, 306);
+            cuiLabel5.Location = new Point(27, 300);
             cuiLabel5.Margin = new Padding(4, 3, 4, 3);
             cuiLabel5.Name = "cuiLabel5";
             cuiLabel5.Size = new Size(122, 28);
@@ -176,7 +176,7 @@
             cuiLabel2.Content = "Chức\\ vụ";
             cuiLabel2.Font = new Font("Segoe UI", 12F);
             cuiLabel2.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Left;
-            cuiLabel2.Location = new Point(410, 236);
+            cuiLabel2.Location = new Point(410, 231);
             cuiLabel2.Margin = new Padding(4, 3, 4, 3);
             cuiLabel2.Name = "cuiLabel2";
             cuiLabel2.Size = new Size(100, 28);
@@ -187,7 +187,7 @@
             cuiLabel1.Content = "SDT";
             cuiLabel1.Font = new Font("Segoe UI", 12F);
             cuiLabel1.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Left;
-            cuiLabel1.Location = new Point(410, 174);
+            cuiLabel1.Location = new Point(410, 169);
             cuiLabel1.Margin = new Padding(4, 3, 4, 3);
             cuiLabel1.Name = "cuiLabel1";
             cuiLabel1.Size = new Size(100, 28);
@@ -200,12 +200,13 @@
             txtEmail.Size = new Size(190, 25);
             txtEmail.StateActive.Content.Color1 = Color.Black;
             txtEmail.StateActive.Content.Font = new Font("Segoe UI", 10F);
-            txtEmail.TabIndex = 36;
+            txtEmail.TabIndex = 6;
             // 
             // txtMaNV
             // 
             txtMaNV.Location = new Point(179, 51);
             txtMaNV.Name = "txtMaNV";
+            txtMaNV.ReadOnly = true;
             txtMaNV.Size = new Size(190, 25);
             txtMaNV.StateActive.Content.Color1 = Color.Black;
             txtMaNV.StateActive.Content.Font = new Font("Segoe UI", 10F);
@@ -218,16 +219,16 @@
             txtLuong.Size = new Size(190, 25);
             txtLuong.StateActive.Content.Color1 = Color.Black;
             txtLuong.StateActive.Content.Font = new Font("Segoe UI", 10F);
-            txtLuong.TabIndex = 34;
+            txtLuong.TabIndex = 5;
             // 
             // txtTenNV
             // 
-            txtTenNV.Location = new Point(179, 112);
+            txtTenNV.Location = new Point(179, 109);
             txtTenNV.Name = "txtTenNV";
             txtTenNV.Size = new Size(190, 25);
             txtTenNV.StateActive.Content.Color1 = Color.Black;
             txtTenNV.StateActive.Content.Font = new Font("Segoe UI", 10F);
-            txtTenNV.TabIndex = 33;
+            txtTenNV.TabIndex = 1;
             // 
             // cbChucVu
             // 
@@ -239,10 +240,10 @@
             cbChucVu.FormattingEnabled = true;
             cbChucVu.ItemHeight = 20;
             cbChucVu.Items.AddRange(new object[] { "Quản lý", "Nhân viên" });
-            cbChucVu.Location = new Point(527, 238);
+            cbChucVu.Location = new Point(527, 231);
             cbChucVu.Name = "cbChucVu";
             cbChucVu.Size = new Size(190, 26);
-            cbChucVu.TabIndex = 32;
+            cbChucVu.TabIndex = 8;
             // 
             // cbGioiTinh
             // 
@@ -254,42 +255,36 @@
             cbGioiTinh.FormattingEnabled = true;
             cbGioiTinh.ItemHeight = 20;
             cbGioiTinh.Items.AddRange(new object[] { "Nam", "Nữ" });
-            cbGioiTinh.Location = new Point(179, 238);
+            cbGioiTinh.Location = new Point(179, 233);
             cbGioiTinh.Name = "cbGioiTinh";
             cbGioiTinh.Size = new Size(190, 26);
-            cbGioiTinh.TabIndex = 31;
-            // 
-            // dtNgaySinh
-            // 
-            dtNgaySinh.CalendarFont = new Font("Segoe UI", 10F);
-            dtNgaySinh.CalendarForeColor = Color.Black;
-            dtNgaySinh.CalendarMonthBackground = Color.Black;
-            dtNgaySinh.CalendarTitleBackColor = Color.Black;
-            dtNgaySinh.CalendarTitleForeColor = Color.Black;
-            dtNgaySinh.CalendarTrailingForeColor = Color.Black;
-            dtNgaySinh.Location = new Point(179, 173);
-            dtNgaySinh.MinimumSize = new Size(0, 29);
-            dtNgaySinh.Name = "dtNgaySinh";
-            dtNgaySinh.Size = new Size(190, 29);
-            dtNgaySinh.TabIndex = 30;
-            dtNgaySinh.UseCustomForeColor = true;
-            dtNgaySinh.UseStyleColors = true;
-            dtNgaySinh.Value = new DateTime(2025, 1, 12, 0, 0, 0, 0);
+            cbGioiTinh.TabIndex = 3;
             // 
             // txtSDT
             // 
-            txtSDT.Location = new Point(527, 177);
+            txtSDT.Location = new Point(527, 172);
             txtSDT.Name = "txtSDT";
             txtSDT.Size = new Size(190, 25);
             txtSDT.StateActive.Content.Color1 = Color.Black;
             txtSDT.StateActive.Content.Font = new Font("Segoe UI", 10F);
-            txtSDT.TabIndex = 29;
+            txtSDT.TabIndex = 7;
+            // 
+            // dtNgaySinh
+            // 
+            dtNgaySinh.Font = new Font("Segoe UI", 10F);
+            dtNgaySinh.Format = DateTimePickerFormat.Custom;
+            dtNgaySinh.Location = new Point(179, 172);
+            dtNgaySinh.Name = "dtNgaySinh";
+            dtNgaySinh.Size = new Size(190, 25);
+            dtNgaySinh.TabIndex = 2;
+            dtNgaySinh.Value = new DateTime(2025, 3, 8, 0, 0, 0, 0);
             // 
             // FEditNV
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 400);
+            Controls.Add(dtNgaySinh);
             Controls.Add(btnConfirm);
             Controls.Add(txtDiaChi);
             Controls.Add(cuiLabel9);
@@ -307,7 +302,6 @@
             Controls.Add(txtTenNV);
             Controls.Add(cbChucVu);
             Controls.Add(cbGioiTinh);
-            Controls.Add(dtNgaySinh);
             Controls.Add(txtSDT);
             Name = "FEditNV";
             Text = "FEditNV";
@@ -335,7 +329,7 @@
         private Krypton.Toolkit.KryptonTextBox txtTenNV;
         private ReaLTaiizor.Controls.AloneComboBox cbChucVu;
         private ReaLTaiizor.Controls.AloneComboBox cbGioiTinh;
-        private ReaLTaiizor.Controls.PoisonDateTime dtNgaySinh;
         private Krypton.Toolkit.KryptonTextBox txtSDT;
+        private DateTimePicker dtNgaySinh;
     }
 }

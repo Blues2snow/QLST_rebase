@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             txtSDT = new Krypton.Toolkit.KryptonTextBox();
-            dtNgaySinh = new ReaLTaiizor.Controls.PoisonDateTime();
             cbGioiTinh = new ReaLTaiizor.Controls.AloneComboBox();
             cbChucVu = new ReaLTaiizor.Controls.AloneComboBox();
             txtTenNV = new Krypton.Toolkit.KryptonTextBox();
@@ -45,6 +44,7 @@
             cuiLabel8 = new CuoreUI.Controls.cuiLabel();
             txtDiaChi = new Krypton.Toolkit.KryptonTextBox();
             btnConfirm = new CuoreUI.Controls.cuiButton();
+            dtNgaySinh = new DateTimePicker();
             SuspendLayout();
             // 
             // txtSDT
@@ -54,24 +54,7 @@
             txtSDT.Size = new Size(190, 25);
             txtSDT.StateActive.Content.Color1 = Color.Black;
             txtSDT.StateActive.Content.Font = new Font("Segoe UI", 10F);
-            txtSDT.TabIndex = 0;
-            // 
-            // dtNgaySinh
-            // 
-            dtNgaySinh.CalendarFont = new Font("Segoe UI", 10F);
-            dtNgaySinh.CalendarForeColor = Color.Black;
-            dtNgaySinh.CalendarMonthBackground = Color.Black;
-            dtNgaySinh.CalendarTitleBackColor = Color.Black;
-            dtNgaySinh.CalendarTitleForeColor = Color.Black;
-            dtNgaySinh.CalendarTrailingForeColor = Color.Black;
-            dtNgaySinh.Location = new Point(181, 115);
-            dtNgaySinh.MinimumSize = new Size(0, 29);
-            dtNgaySinh.Name = "dtNgaySinh";
-            dtNgaySinh.Size = new Size(190, 29);
-            dtNgaySinh.TabIndex = 11;
-            dtNgaySinh.UseCustomForeColor = true;
-            dtNgaySinh.UseStyleColors = true;
-            dtNgaySinh.Value = new DateTime(2025, 1, 12, 0, 0, 0, 0);
+            txtSDT.TabIndex = 7;
             // 
             // cbGioiTinh
             // 
@@ -86,7 +69,7 @@
             cbGioiTinh.Location = new Point(181, 180);
             cbGioiTinh.Name = "cbGioiTinh";
             cbGioiTinh.Size = new Size(190, 26);
-            cbGioiTinh.TabIndex = 12;
+            cbGioiTinh.TabIndex = 3;
             // 
             // cbChucVu
             // 
@@ -101,7 +84,7 @@
             cbChucVu.Location = new Point(526, 241);
             cbChucVu.Name = "cbChucVu";
             cbChucVu.Size = new Size(190, 26);
-            cbChucVu.TabIndex = 13;
+            cbChucVu.TabIndex = 8;
             // 
             // txtTenNV
             // 
@@ -110,7 +93,7 @@
             txtTenNV.Size = new Size(190, 25);
             txtTenNV.StateActive.Content.Color1 = Color.Black;
             txtTenNV.StateActive.Content.Font = new Font("Segoe UI", 10F);
-            txtTenNV.TabIndex = 14;
+            txtTenNV.TabIndex = 1;
             // 
             // txtLuong
             // 
@@ -119,7 +102,7 @@
             txtLuong.Size = new Size(190, 25);
             txtLuong.StateActive.Content.Color1 = Color.Black;
             txtLuong.StateActive.Content.Font = new Font("Segoe UI", 10F);
-            txtLuong.TabIndex = 15;
+            txtLuong.TabIndex = 5;
             // 
             // txtEmail
             // 
@@ -128,7 +111,7 @@
             txtEmail.Size = new Size(190, 25);
             txtEmail.StateActive.Content.Color1 = Color.Black;
             txtEmail.StateActive.Content.Font = new Font("Segoe UI", 10F);
-            txtEmail.TabIndex = 17;
+            txtEmail.TabIndex = 6;
             // 
             // cuiLabel1
             // 
@@ -179,7 +162,7 @@
             cuiLabel5.Content = "Địa\\ chỉ";
             cuiLabel5.Font = new Font("Segoe UI", 12F);
             cuiLabel5.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Left;
-            cuiLabel5.Location = new Point(29, 248);
+            cuiLabel5.Location = new Point(29, 238);
             cuiLabel5.Margin = new Padding(4, 3, 4, 3);
             cuiLabel5.Name = "cuiLabel5";
             cuiLabel5.Size = new Size(117, 28);
@@ -220,12 +203,12 @@
             // 
             // txtDiaChi
             // 
-            txtDiaChi.Location = new Point(181, 251);
+            txtDiaChi.Location = new Point(181, 241);
             txtDiaChi.Name = "txtDiaChi";
             txtDiaChi.Size = new Size(190, 25);
             txtDiaChi.StateActive.Content.Color1 = Color.Black;
             txtDiaChi.StateActive.Content.Font = new Font("Segoe UI", 10F);
-            txtDiaChi.TabIndex = 27;
+            txtDiaChi.TabIndex = 4;
             // 
             // btnConfirm
             // 
@@ -259,15 +242,26 @@
             btnConfirm.PressedOutline = Color.Empty;
             btnConfirm.Rounding = new Padding(8);
             btnConfirm.Size = new Size(159, 36);
-            btnConfirm.TabIndex = 28;
+            btnConfirm.TabIndex = 9;
             btnConfirm.TextOffset = new Point(0, 0);
             btnConfirm.Click += btnConfirm_Click;
+            // 
+            // dtNgaySinh
+            // 
+            dtNgaySinh.Font = new Font("Segoe UI", 10F);
+            dtNgaySinh.Format = DateTimePickerFormat.Custom;
+            dtNgaySinh.Location = new Point(181, 115);
+            dtNgaySinh.Name = "dtNgaySinh";
+            dtNgaySinh.Size = new Size(190, 25);
+            dtNgaySinh.TabIndex = 2;
+            dtNgaySinh.Value = new DateTime(2025, 3, 8, 0, 0, 0, 0);
             // 
             // FAddNV
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 400);
+            Controls.Add(dtNgaySinh);
             Controls.Add(btnConfirm);
             Controls.Add(txtDiaChi);
             Controls.Add(cuiLabel8);
@@ -283,7 +277,6 @@
             Controls.Add(txtTenNV);
             Controls.Add(cbChucVu);
             Controls.Add(cbGioiTinh);
-            Controls.Add(dtNgaySinh);
             Controls.Add(txtSDT);
             Name = "FAddNV";
             Text = "Thêm nhân viên";
@@ -295,7 +288,6 @@
         #endregion
 
         private Krypton.Toolkit.KryptonTextBox txtSDT;
-        private ReaLTaiizor.Controls.PoisonDateTime dtNgaySinh;
         private ReaLTaiizor.Controls.AloneComboBox cbGioiTinh;
         private ReaLTaiizor.Controls.AloneComboBox cbChucVu;
         private Krypton.Toolkit.KryptonTextBox txtTenNV;
@@ -311,5 +303,6 @@
         private CuoreUI.Controls.cuiLabel cuiLabel8;
         private Krypton.Toolkit.KryptonTextBox txtDiaChi;
         private CuoreUI.Controls.cuiButton btnConfirm;
+        private DateTimePicker dtNgaySinh;
     }
 }

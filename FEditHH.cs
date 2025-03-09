@@ -49,7 +49,7 @@ namespace QLST_rebase
                     goods.goodsName = txtTenHang.Text;
                     goods.entryDate = DateOnly.Parse(dtNgayNhap.Text);
                     goods.price = double.Parse(txtGiaTien.Text);
-                    goods.quantity = NmrSoLuong.Value;
+                    goods.quantity = int.Parse(NmrSoLuong.Value.ToString());
                     goods.unit = txtDonViTinh.Text;
                     goods.suppiler = txtNhaCC.Text;
                     goods.type = cbLoaiHang.Text;

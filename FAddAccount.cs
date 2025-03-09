@@ -34,23 +34,33 @@ namespace QLST_rebase
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            if (txtMatKhau.Text.Length >= 8 && txtMatKhau.Text == txtMatKhau2.Text)
+            if (txtTaiKhoan.Text != "")
             {
-                using (DataDBContext context = new())
+                if (txtMatKhau.Text.Length >= 8 && txtMatKhau.Text.Length <= 16)
                 {
-                    var temp = new account
+                    if (txtMatKhau.Text == txtMatKhau2.Text)
                     {
-                        _account = txtTaiKhoan.Text,
-                        _password = txtMatKhau.Text,
-                        staffId = int.Parse(cbMaNV.Text)
-                    };
-                    context.accounts.Add(temp);
-                    context.SaveChanges();
-                    MessageBox.Show("Thêm thành công!");
+                        using (DataDBContext context = new())
+                        {
+                            var temp = new account
+                            {
+                                _account = txtTaiKhoan.Text,
+                                _password = txtMatKhau.Text,
+                                staffId = int.Parse(cbMaNV.Text)
+                            };
+                            context.accounts.Add(temp);
+                            context.SaveChanges();
+                            MessageBox.Show("Thêm thành công!");
+                        }
+                    }
+                    else
+                        MessageBox.Show("Mật khẩu nhập lại không khớp \n Vui lòng nhập lại mật khẩu!");
                 }
+                else
+                    MessageBox.Show("Mật khẩu phải từ 8 đến 16 kí tự \n Vui lòng nhập lại mật khẩu!");
             }
             else
-                MessageBox.Show("Vui lòng nhập lại mật khẩu!");
+                MessageBox.Show("Tài khoản không được để trống!");
         }
     }
 }

@@ -60,6 +60,7 @@
             cuiLabel2.Name = "cuiLabel2";
             cuiLabel2.Size = new Size(93, 26);
             cuiLabel2.TabIndex = 1;
+            cuiLabel2.TabStop = false;
             // 
             // cuiLabel3
             // 
@@ -71,6 +72,7 @@
             cuiLabel3.Name = "cuiLabel3";
             cuiLabel3.Size = new Size(159, 26);
             cuiLabel3.TabIndex = 2;
+            cuiLabel3.TabStop = false;
             // 
             // cuiLabel4
             // 
@@ -82,6 +84,7 @@
             cuiLabel4.Name = "cuiLabel4";
             cuiLabel4.Size = new Size(93, 26);
             cuiLabel4.TabIndex = 3;
+            cuiLabel4.TabStop = false;
             // 
             // btnConfirm
             // 
@@ -131,7 +134,7 @@
             cbMaNV.Location = new Point(198, 56);
             cbMaNV.Name = "cbMaNV";
             cbMaNV.Size = new Size(286, 26);
-            cbMaNV.TabIndex = 33;
+            cbMaNV.TabIndex = 1;
             // 
             // txtTaiKhoan
             // 
@@ -140,7 +143,7 @@
             txtTaiKhoan.Size = new Size(286, 25);
             txtTaiKhoan.StateActive.Content.Color1 = Color.Black;
             txtTaiKhoan.StateActive.Content.Font = new Font("Segoe UI", 10F);
-            txtTaiKhoan.TabIndex = 34;
+            txtTaiKhoan.TabIndex = 2;
             // 
             // txtMatKhau
             // 
@@ -149,7 +152,7 @@
             txtMatKhau.Size = new Size(286, 25);
             txtMatKhau.StateActive.Content.Color1 = Color.Black;
             txtMatKhau.StateActive.Content.Font = new Font("Segoe UI", 10F);
-            txtMatKhau.TabIndex = 35;
+            txtMatKhau.TabIndex = 3;
             // 
             // txtMatKhau2
             // 
@@ -158,7 +161,7 @@
             txtMatKhau2.Size = new Size(286, 25);
             txtMatKhau2.StateActive.Content.Color1 = Color.Black;
             txtMatKhau2.StateActive.Content.Font = new Font("Segoe UI", 10F);
-            txtMatKhau2.TabIndex = 36;
+            txtMatKhau2.TabIndex = 4;
             // 
             // FAddAccount
             // 
@@ -175,7 +178,7 @@
             Controls.Add(cuiLabel2);
             Controls.Add(cuiLabel1);
             Name = "FAddAccount";
-            Text = "FAddAccount";
+            Text = "Thêm tài khoản";
             Load += FAddAccount_Load;
             ResumeLayout(false);
             PerformLayout();

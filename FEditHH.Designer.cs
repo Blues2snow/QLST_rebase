@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            NmrSoLuong = new ReaLTaiizor.Controls.FoxNumeric();
             btnConfirm = new CuoreUI.Controls.cuiButton();
             txtGiaTien = new Krypton.Toolkit.KryptonTextBox();
             cuiLabel9 = new CuoreUI.Controls.cuiLabel();
@@ -43,29 +42,10 @@
             txtMaHang = new Krypton.Toolkit.KryptonTextBox();
             txtTenHang = new Krypton.Toolkit.KryptonTextBox();
             cbLoaiHang = new ReaLTaiizor.Controls.AloneComboBox();
-            dtNgayNhap = new ReaLTaiizor.Controls.PoisonDateTime();
             txtNhaCC = new Krypton.Toolkit.KryptonTextBox();
+            dtNgayNhap = new DateTimePicker();
+            NmrSoLuong = new Krypton.Toolkit.KryptonNumericUpDown();
             SuspendLayout();
-            // 
-            // NmrSoLuong
-            // 
-            NmrSoLuong.BackColor = Color.White;
-            NmrSoLuong.BorderColor = Color.Gray;
-            NmrSoLuong.ButtonTextColor = Color.Black;
-            NmrSoLuong.DisabledBorderColor = Color.Gray;
-            NmrSoLuong.DisabledButtonTextColor = Color.Black;
-            NmrSoLuong.DisabledTextColor = Color.Black;
-            NmrSoLuong.EnabledCalc = true;
-            NmrSoLuong.Font = new Font("Segoe UI", 10F);
-            NmrSoLuong.ForeColor = Color.Black;
-            NmrSoLuong.Location = new Point(528, 52);
-            NmrSoLuong.Max = 100;
-            NmrSoLuong.Min = 0;
-            NmrSoLuong.Name = "NmrSoLuong";
-            NmrSoLuong.Size = new Size(190, 27);
-            NmrSoLuong.TabIndex = 65;
-            NmrSoLuong.Text = "foxNumeric1";
-            NmrSoLuong.Value = 0;
             // 
             // btnConfirm
             // 
@@ -99,7 +79,7 @@
             btnConfirm.PressedOutline = Color.Empty;
             btnConfirm.Rounding = new Padding(8);
             btnConfirm.Size = new Size(156, 36);
-            btnConfirm.TabIndex = 64;
+            btnConfirm.TabIndex = 9;
             btnConfirm.TextOffset = new Point(0, 0);
             btnConfirm.Click += btnConfirm_Click;
             // 
@@ -110,7 +90,7 @@
             txtGiaTien.Size = new Size(190, 25);
             txtGiaTien.StateActive.Content.Color1 = Color.Black;
             txtGiaTien.StateActive.Content.Font = new Font("Segoe UI", 10F);
-            txtGiaTien.TabIndex = 63;
+            txtGiaTien.TabIndex = 4;
             // 
             // cuiLabel9
             // 
@@ -207,7 +187,7 @@
             txtDonViTinh.Size = new Size(190, 25);
             txtDonViTinh.StateActive.Content.Color1 = Color.Black;
             txtDonViTinh.StateActive.Content.Font = new Font("Segoe UI", 10F);
-            txtDonViTinh.TabIndex = 54;
+            txtDonViTinh.TabIndex = 6;
             // 
             // txtMaHang
             // 
@@ -218,7 +198,7 @@
             txtMaHang.Size = new Size(190, 25);
             txtMaHang.StateActive.Content.Color1 = Color.Black;
             txtMaHang.StateActive.Content.Font = new Font("Segoe UI", 10F);
-            txtMaHang.TabIndex = 53;
+            txtMaHang.TabIndex = 1;
             // 
             // txtTenHang
             // 
@@ -227,7 +207,7 @@
             txtTenHang.Size = new Size(190, 25);
             txtTenHang.StateActive.Content.Color1 = Color.Black;
             txtTenHang.StateActive.Content.Font = new Font("Segoe UI", 10F);
-            txtTenHang.TabIndex = 52;
+            txtTenHang.TabIndex = 2;
             // 
             // cbLoaiHang
             // 
@@ -242,24 +222,7 @@
             cbLoaiHang.Location = new Point(528, 241);
             cbLoaiHang.Name = "cbLoaiHang";
             cbLoaiHang.Size = new Size(190, 26);
-            cbLoaiHang.TabIndex = 51;
-            // 
-            // dtNgayNhap
-            // 
-            dtNgayNhap.CalendarFont = new Font("Segoe UI", 10F);
-            dtNgayNhap.CalendarForeColor = Color.Black;
-            dtNgayNhap.CalendarMonthBackground = Color.Black;
-            dtNgayNhap.CalendarTitleBackColor = Color.Black;
-            dtNgayNhap.CalendarTitleForeColor = Color.Black;
-            dtNgayNhap.CalendarTrailingForeColor = Color.Black;
-            dtNgayNhap.Location = new Point(180, 176);
-            dtNgayNhap.MinimumSize = new Size(0, 29);
-            dtNgayNhap.Name = "dtNgayNhap";
-            dtNgayNhap.Size = new Size(190, 29);
-            dtNgayNhap.TabIndex = 50;
-            dtNgayNhap.UseCustomForeColor = true;
-            dtNgayNhap.UseStyleColors = true;
-            dtNgayNhap.Value = new DateTime(2025, 1, 12, 0, 0, 0, 0);
+            cbLoaiHang.TabIndex = 8;
             // 
             // txtNhaCC
             // 
@@ -268,7 +231,30 @@
             txtNhaCC.Size = new Size(190, 25);
             txtNhaCC.StateActive.Content.Color1 = Color.Black;
             txtNhaCC.StateActive.Content.Font = new Font("Segoe UI", 10F);
-            txtNhaCC.TabIndex = 49;
+            txtNhaCC.TabIndex = 7;
+            // 
+            // dtNgayNhap
+            // 
+            dtNgayNhap.Font = new Font("Segoe UI", 10F);
+            dtNgayNhap.Format = DateTimePickerFormat.Custom;
+            dtNgayNhap.Location = new Point(180, 180);
+            dtNgayNhap.Name = "dtNgayNhap";
+            dtNgayNhap.Size = new Size(190, 25);
+            dtNgayNhap.TabIndex = 3;
+            dtNgayNhap.Value = new DateTime(2025, 3, 8, 0, 0, 0, 0);
+            // 
+            // NmrSoLuong
+            // 
+            NmrSoLuong.Increment = new decimal(new int[] { 1, 0, 0, 0 });
+            NmrSoLuong.Location = new Point(528, 54);
+            NmrSoLuong.Maximum = new decimal(new int[] { 9999, 0, 0, 0 });
+            NmrSoLuong.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            NmrSoLuong.Name = "NmrSoLuong";
+            NmrSoLuong.Size = new Size(190, 25);
+            NmrSoLuong.StateActive.Content.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            NmrSoLuong.StateActive.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            NmrSoLuong.TabIndex = 5;
+            NmrSoLuong.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // FEditHH
             // 
@@ -276,6 +262,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 391);
             Controls.Add(NmrSoLuong);
+            Controls.Add(dtNgayNhap);
             Controls.Add(btnConfirm);
             Controls.Add(txtGiaTien);
             Controls.Add(cuiLabel9);
@@ -290,10 +277,9 @@
             Controls.Add(txtMaHang);
             Controls.Add(txtTenHang);
             Controls.Add(cbLoaiHang);
-            Controls.Add(dtNgayNhap);
             Controls.Add(txtNhaCC);
             Name = "FEditHH";
-            Text = "FEditHH";
+            Text = "Sửa hàng";
             Load += FEditHH_Load;
             ResumeLayout(false);
             PerformLayout();
@@ -301,7 +287,6 @@
 
         #endregion
 
-        private ReaLTaiizor.Controls.FoxNumeric NmrSoLuong;
         private CuoreUI.Controls.cuiButton btnConfirm;
         private Krypton.Toolkit.KryptonTextBox txtGiaTien;
         private CuoreUI.Controls.cuiLabel cuiLabel9;
@@ -316,7 +301,9 @@
         private Krypton.Toolkit.KryptonTextBox txtMaHang;
         private Krypton.Toolkit.KryptonTextBox txtTenHang;
         private ReaLTaiizor.Controls.AloneComboBox cbLoaiHang;
-        private ReaLTaiizor.Controls.PoisonDateTime dtNgayNhap;
         private Krypton.Toolkit.KryptonTextBox txtNhaCC;
+        private CuoreUI.Controls.cuiDateTimePicker cuiDateTimePicker1;
+        private DateTimePicker dtNgayNhap;
+        private Krypton.Toolkit.KryptonNumericUpDown NmrSoLuong;
     }
 }
