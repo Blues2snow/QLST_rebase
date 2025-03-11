@@ -302,7 +302,6 @@
         private Krypton.Toolkit.KryptonTextBox txtTenHang;
         private ReaLTaiizor.Controls.AloneComboBox cbLoaiHang;
         private Krypton.Toolkit.KryptonTextBox txtNhaCC;
-        private CuoreUI.Controls.cuiDateTimePicker cuiDateTimePicker1;
         private DateTimePicker dtNgayNhap;
         private Krypton.Toolkit.KryptonNumericUpDown NmrSoLuong;
     }

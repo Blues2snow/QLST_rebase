@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Identity.Client;
 using QLST_rebase.DAO;
 using System;
 using System.Collections.Generic;
@@ -34,19 +35,23 @@ namespace QLST_rebase
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            if (txtTaiKhoan.Text != "")
+            AddAccount(txtTaiKhoan.Text, txtMatKhau.Text, txtMatKhau2.Text, cbMaNV.Text);
+        }
+        public void AddAccount(string txtTaiKhoan,string txtMatKhau,string txtMatKhau2,string cbMaNV)
+        {
+            if (txtTaiKhoan != "")
             {
-                if (txtMatKhau.Text.Length >= 8 && txtMatKhau.Text.Length <= 16)
+                if (txtMatKhau.Length is >= 8 and <= 16)
                 {
-                    if (txtMatKhau.Text == txtMatKhau2.Text)
+                    if (txtMatKhau == txtMatKhau2)
                     {
                         using (DataDBContext context = new())
                         {
                             var temp = new account
                             {
-                                _account = txtTaiKhoan.Text,
-                                _password = txtMatKhau.Text,
-                                staffId = int.Parse(cbMaNV.Text)
+                                _account = txtTaiKhoan,
+                                _password = txtMatKhau,
+                                staffId = int.Parse(cbMaNV)
                             };
                             context.accounts.Add(temp);
                             context.SaveChanges();

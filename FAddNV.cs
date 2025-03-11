@@ -22,33 +22,10 @@ namespace QLST_rebase
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            try //1
-            {
-                using (DataDBContext context = new()) //2
-                {
-                    var staff = new staff //3
-                    {
-                        staffName = txtTenNV.Text,
-                        birthDate = DateOnly.Parse(dtNgaySinh.Text), //4
-                        gender = cbGioiTinh.Text,
-                        address = txtDiaChi.Text,
-                        salary = double.Parse(txtLuong.Text), //5
-                        email = txtEmail.Text,
-                        phoneNumber = txtSDT.Text,
-                        position = cbChucVu.Text //6 (cac text)
-                    };
-                    context.staffs.Add(staff); //7
-                    context.SaveChanges();//8
-                    MessageBox.Show("Thêm thành công!");     //9  
-                }
-            }
-            catch (Exception) //10
-            {
-                MessageBox.Show("Vui lòng kiểm tra lại thông tin"); //11
-            }
+            AddNV(txtTenNV.Text,dtNgaySinh.Text,cbGioiTinh.Text,txtDiaChi.Text,txtLuong.Text,txtEmail.Text,txtSDT.Text,cbChucVu.Text);
         }
 
-        private void add_NV(string TenNV, string BirthDate, string gender, string addres, string salary, string email, string phonenumber, string position)
+        public void AddNV(string TenNV, string BirthDate, string gender, string addres, string salary, string email, string phonenumber, string position)
         {
             try //1
             {
