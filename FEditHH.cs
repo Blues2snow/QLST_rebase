@@ -1,4 +1,5 @@
-﻿using QLST_rebase.DAO;
+﻿using Microsoft.IdentityModel.Tokens;
+using QLST_rebase.DAO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,11 +9,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace QLST_rebase
 {
     public partial class FEditHH : Form
     {
+        bool[] tempvalid = [true, true, true, true, true];
         public FEditHH()
         {
             InitializeComponent();
@@ -41,9 +44,18 @@ namespace QLST_rebase
         }
         private void btnConfirm_Click(object sender, EventArgs e)
         {
+            btnConfirm.Focus();
+            bool valid = true;
+            foreach (bool temp in tempvalid)
+                if (!temp)
+                {
+                    valid = false;
+                    break;
+                }
             using (DataDBContext context = new())
             {
                 var goods = context.goodss.FirstOrDefault(p => p.goodsId == int.Parse(txtMaHang.Text));
+                if (!valid) MessageBox.Show("Vui lòng kiểm tra lại thông tin"); else
                 if (goods != null)
                 {
                     goods.goodsName = txtTenHang.Text;
@@ -57,6 +69,103 @@ namespace QLST_rebase
                     MessageBox.Show("Sửa thành công!");
                 }
             }
+        }
+
+        private void txtTenHang_Leave(object sender, EventArgs e)
+        {
+            var tb = txtTenHang.Text;
+            string temp = "";
+            if (tb.IsNullOrEmpty()) temp = "Tên hàng không được để trống";
+            if (!tb.All(char.IsLetterOrDigit)) temp = "Vui lòng nhập đúng định dạng";
+            if (temp != "")
+            {
+                tempvalid[0] = false;
+                TenHangWarn.Text = temp;
+                txtTenHang.StateActive.Border.Color1 = Color.OrangeRed;
+            }
+        }
+
+        private void txtTenHang_Enter(object sender, EventArgs e)
+        {
+            tempvalid[0] = true;
+            TenHangWarn.Text = "";
+            txtTenHang.StateActive.Border.Color1 = Color.Black;
+        }
+
+        private void dtNgayNhap_Leave(object sender, EventArgs e)
+        {
+            if (dtNgayNhap.Value > DateTime.Today)
+            {
+                tempvalid[1] = false;
+                dtwarn.Text = "Vui lòng nhập đúng ngày";
+            }
+        }
+
+        private void dtNgayNhap_Enter(object sender, EventArgs e)
+        {
+            tempvalid[1] = true;
+            dtwarn.Text = "";
+        }
+
+        private void txtGiaTien_Leave(object sender, EventArgs e)
+        {
+            var tb = txtGiaTien.Text;
+            string temp = "";
+            if (tb.IsNullOrEmpty()) temp = "Giá tiền không được để trống";
+            if (!tb.All(char.IsDigit)) temp = "Vui lòng nhập đúng định dạng";
+            if (!temp.IsNullOrEmpty())
+            {
+                tempvalid[2] = false;
+                pricewarn.Text = temp;
+                txtGiaTien.StateActive.Border.Color1 = Color.OrangeRed;
+            }
+        }
+
+        private void txtGiaTien_Enter(object sender, EventArgs e)
+        {
+            tempvalid[2] = true;
+            pricewarn.Text = "";
+            txtGiaTien.StateActive.Border.Color1 = Color.Black;
+        }
+
+        private void txtNhaCC_Leave(object sender, EventArgs e)
+        {
+            string tb = txtNhaCC.Text;
+            string temp = "";
+            if (tb.IsNullOrEmpty()) temp = "Tên hàng không được để trống";
+            if (!tb.All(char.IsLetterOrDigit)) temp = "Vui lòng nhập đúng định dạng";
+            if (!temp.IsNullOrEmpty())
+            {
+                tempvalid[3] = false;
+                nccwarn.Text = temp;
+                txtNhaCC.StateActive.Border.Color1 = Color.OrangeRed;
+            }
+        }
+        private void txtNhaCC_Enter(object sender, EventArgs e)
+        {
+            tempvalid[3] = true;
+            nccwarn.Text = "";
+            txtNhaCC.StateActive.Border.Color1 = Color.Black;
+        }
+        private void txtDonViTinh_Leave(object sender, EventArgs e)
+        {
+            string tb = txtDonViTinh.Text;
+            string temp = "";
+            if (tb.IsNullOrEmpty()) temp = "Tên hàng không được để trống";
+            if (!tb.All(char.IsLetterOrDigit)) temp = "Vui lòng nhập đúng định dạng";
+            if (!temp.IsNullOrEmpty())
+            {
+                tempvalid[4] = false;
+                dvtinhwarn.Text = temp;
+                txtDonViTinh.StateActive.Border.Color1 = Color.OrangeRed;
+            }
+        }
+
+        private void txtDonViTinh_Enter(object sender, EventArgs e)
+        {
+            tempvalid[4] = true;
+            dvtinhwarn.Text = "";
+            txtDonViTinh.StateActive.Border.Color1 = Color.Black;
         }
     }
 }

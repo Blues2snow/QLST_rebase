@@ -47,6 +47,12 @@
             cbGioiTinh = new ReaLTaiizor.Controls.AloneComboBox();
             txtSDT = new Krypton.Toolkit.KryptonTextBox();
             dtNgaySinh = new DateTimePicker();
+            sdtwarn = new Label();
+            emailwarn = new Label();
+            luongwarn = new Label();
+            diachiwarn = new Label();
+            dtwarn = new Label();
+            tennvwarn = new Label();
             SuspendLayout();
             // 
             // btnConfirm
@@ -92,7 +98,10 @@
             txtDiaChi.Size = new Size(190, 25);
             txtDiaChi.StateActive.Content.Color1 = Color.Black;
             txtDiaChi.StateActive.Content.Font = new Font("Segoe UI", 10F);
+            txtDiaChi.StateCommon.Border.Color1 = Color.Black;
             txtDiaChi.TabIndex = 4;
+            txtDiaChi.Enter += txtDiaChi_Enter;
+            txtDiaChi.Leave += txtDiaChi_Leave;
             // 
             // cuiLabel9
             // 
@@ -200,7 +209,10 @@
             txtEmail.Size = new Size(190, 25);
             txtEmail.StateActive.Content.Color1 = Color.Black;
             txtEmail.StateActive.Content.Font = new Font("Segoe UI", 10F);
+            txtEmail.StateCommon.Border.Color1 = Color.Black;
             txtEmail.TabIndex = 6;
+            txtEmail.Enter += txtEmail_Enter;
+            txtEmail.Leave += txtEmail_Leave;
             // 
             // txtMaNV
             // 
@@ -210,6 +222,7 @@
             txtMaNV.Size = new Size(190, 25);
             txtMaNV.StateActive.Content.Color1 = Color.Black;
             txtMaNV.StateActive.Content.Font = new Font("Segoe UI", 10F);
+            txtMaNV.StateCommon.Border.Color1 = Color.Black;
             txtMaNV.TabIndex = 35;
             // 
             // txtLuong
@@ -219,7 +232,10 @@
             txtLuong.Size = new Size(190, 25);
             txtLuong.StateActive.Content.Color1 = Color.Black;
             txtLuong.StateActive.Content.Font = new Font("Segoe UI", 10F);
+            txtLuong.StateCommon.Border.Color1 = Color.Black;
             txtLuong.TabIndex = 5;
+            txtLuong.Enter += txtLuong_Enter;
+            txtLuong.Leave += txtLuong_Leave;
             // 
             // txtTenNV
             // 
@@ -228,7 +244,10 @@
             txtTenNV.Size = new Size(190, 25);
             txtTenNV.StateActive.Content.Color1 = Color.Black;
             txtTenNV.StateActive.Content.Font = new Font("Segoe UI", 10F);
+            txtTenNV.StateCommon.Border.Color1 = Color.Black;
             txtTenNV.TabIndex = 1;
+            txtTenNV.Enter += txtTenNV_Enter;
+            txtTenNV.Leave += txtTenNV_Leave;
             // 
             // cbChucVu
             // 
@@ -267,7 +286,10 @@
             txtSDT.Size = new Size(190, 25);
             txtSDT.StateActive.Content.Color1 = Color.Black;
             txtSDT.StateActive.Content.Font = new Font("Segoe UI", 10F);
+            txtSDT.StateCommon.Border.Color1 = Color.Black;
             txtSDT.TabIndex = 7;
+            txtSDT.Enter += txtSDT_Enter;
+            txtSDT.Leave += txtSDT_Leave;
             // 
             // dtNgaySinh
             // 
@@ -278,12 +300,74 @@
             dtNgaySinh.Size = new Size(190, 25);
             dtNgaySinh.TabIndex = 2;
             dtNgaySinh.Value = new DateTime(2025, 3, 8, 0, 0, 0, 0);
+            dtNgaySinh.Enter += dtNgaySinh_Enter;
+            dtNgaySinh.Leave += dtNgaySinh_Leave;
+            // 
+            // sdtwarn
+            // 
+            sdtwarn.AutoSize = true;
+            sdtwarn.ForeColor = Color.Red;
+            sdtwarn.Location = new Point(527, 200);
+            sdtwarn.Name = "sdtwarn";
+            sdtwarn.Size = new Size(0, 15);
+            sdtwarn.TabIndex = 57;
+            // 
+            // emailwarn
+            // 
+            emailwarn.AutoSize = true;
+            emailwarn.ForeColor = Color.Red;
+            emailwarn.Location = new Point(527, 140);
+            emailwarn.Name = "emailwarn";
+            emailwarn.Size = new Size(0, 15);
+            emailwarn.TabIndex = 56;
+            // 
+            // luongwarn
+            // 
+            luongwarn.AutoSize = true;
+            luongwarn.ForeColor = Color.Red;
+            luongwarn.Location = new Point(527, 79);
+            luongwarn.Name = "luongwarn";
+            luongwarn.Size = new Size(0, 15);
+            luongwarn.TabIndex = 55;
+            // 
+            // diachiwarn
+            // 
+            diachiwarn.AutoSize = true;
+            diachiwarn.ForeColor = Color.Red;
+            diachiwarn.Location = new Point(179, 328);
+            diachiwarn.Name = "diachiwarn";
+            diachiwarn.Size = new Size(0, 15);
+            diachiwarn.TabIndex = 54;
+            // 
+            // dtwarn
+            // 
+            dtwarn.AutoSize = true;
+            dtwarn.ForeColor = Color.Red;
+            dtwarn.Location = new Point(179, 200);
+            dtwarn.Name = "dtwarn";
+            dtwarn.Size = new Size(0, 15);
+            dtwarn.TabIndex = 53;
+            // 
+            // tennvwarn
+            // 
+            tennvwarn.AutoSize = true;
+            tennvwarn.ForeColor = Color.Red;
+            tennvwarn.Location = new Point(179, 137);
+            tennvwarn.Name = "tennvwarn";
+            tennvwarn.Size = new Size(0, 15);
+            tennvwarn.TabIndex = 52;
             // 
             // FEditNV
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 400);
+            Controls.Add(sdtwarn);
+            Controls.Add(emailwarn);
+            Controls.Add(luongwarn);
+            Controls.Add(diachiwarn);
+            Controls.Add(dtwarn);
+            Controls.Add(tennvwarn);
             Controls.Add(dtNgaySinh);
             Controls.Add(btnConfirm);
             Controls.Add(txtDiaChi);
@@ -331,5 +415,11 @@
         private ReaLTaiizor.Controls.AloneComboBox cbGioiTinh;
         private Krypton.Toolkit.KryptonTextBox txtSDT;
         private DateTimePicker dtNgaySinh;
+        private Label sdtwarn;
+        private Label emailwarn;
+        private Label luongwarn;
+        private Label diachiwarn;
+        private Label dtwarn;
+        private Label tennvwarn;
     }
 }

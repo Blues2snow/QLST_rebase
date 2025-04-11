@@ -43,6 +43,12 @@
             txtNhaCC = new Krypton.Toolkit.KryptonTextBox();
             dtNgayNhap = new DateTimePicker();
             NmrSoLuong = new Krypton.Toolkit.KryptonNumericUpDown();
+            TenHangWarn = new Label();
+            dtwarn = new Label();
+            pricewarn = new Label();
+            nccwarn = new Label();
+            soluongwarn = new Label();
+            dvtinhwarn = new Label();
             SuspendLayout();
             // 
             // btnConfirm
@@ -84,11 +90,15 @@
             // txtGiaTien
             // 
             txtGiaTien.Location = new Point(176, 181);
+            txtGiaTien.Margin = new Padding(20, 3, 3, 3);
             txtGiaTien.Name = "txtGiaTien";
             txtGiaTien.Size = new Size(190, 25);
+            txtGiaTien.StateActive.Border.Color1 = Color.Black;
             txtGiaTien.StateActive.Content.Color1 = Color.Black;
             txtGiaTien.StateActive.Content.Font = new Font("Segoe UI", 10F);
             txtGiaTien.TabIndex = 3;
+            txtGiaTien.Enter += txtGiaTien_Enter;
+            txtGiaTien.Leave += txtGiaTien_Leave;
             // 
             // cuiLabel8
             // 
@@ -106,7 +116,7 @@
             cuiLabel7.Content = "Ngày\\ nhập";
             cuiLabel7.Font = new Font("Segoe UI", 12F);
             cuiLabel7.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Left;
-            cuiLabel7.Location = new Point(22, 119);
+            cuiLabel7.Location = new Point(22, 113);
             cuiLabel7.Margin = new Padding(4, 3, 4, 3);
             cuiLabel7.Name = "cuiLabel7";
             cuiLabel7.Size = new Size(122, 28);
@@ -172,18 +182,24 @@
             txtDonViTinh.Location = new Point(552, 114);
             txtDonViTinh.Name = "txtDonViTinh";
             txtDonViTinh.Size = new Size(190, 25);
+            txtDonViTinh.StateActive.Border.Color1 = Color.Black;
             txtDonViTinh.StateActive.Content.Color1 = Color.Black;
             txtDonViTinh.StateActive.Content.Font = new Font("Segoe UI", 10F);
             txtDonViTinh.TabIndex = 6;
+            txtDonViTinh.Enter += txtDonViTinh_Enter;
+            txtDonViTinh.Leave += txtDonViTinh_Leave;
             // 
             // txtTenHang
             // 
             txtTenHang.Location = new Point(176, 57);
             txtTenHang.Name = "txtTenHang";
             txtTenHang.Size = new Size(190, 25);
+            txtTenHang.StateActive.Border.Color1 = Color.Black;
             txtTenHang.StateActive.Content.Color1 = Color.Black;
             txtTenHang.StateActive.Content.Font = new Font("Segoe UI", 10F);
             txtTenHang.TabIndex = 1;
+            txtTenHang.Enter += txtTenHang_Enter;
+            txtTenHang.Leave += txtTenHang_Leave;
             // 
             // cbLoaiHang
             // 
@@ -191,6 +207,7 @@
             cbLoaiHang.DrawMode = DrawMode.OwnerDrawFixed;
             cbLoaiHang.DropDownStyle = ComboBoxStyle.DropDownList;
             cbLoaiHang.EnabledCalc = true;
+            cbLoaiHang.Font = new Font("Segoe UI", 10F);
             cbLoaiHang.ForeColor = Color.Black;
             cbLoaiHang.FormattingEnabled = true;
             cbLoaiHang.ItemHeight = 20;
@@ -205,19 +222,28 @@
             txtNhaCC.Location = new Point(175, 239);
             txtNhaCC.Name = "txtNhaCC";
             txtNhaCC.Size = new Size(190, 25);
+            txtNhaCC.StateActive.Border.Color1 = Color.Black;
             txtNhaCC.StateActive.Content.Color1 = Color.Black;
             txtNhaCC.StateActive.Content.Font = new Font("Segoe UI", 10F);
             txtNhaCC.TabIndex = 4;
+            txtNhaCC.Enter += txtNhaCC_Enter;
+            txtNhaCC.Leave += txtNhaCC_Leave;
             // 
             // dtNgayNhap
             // 
+            dtNgayNhap.CalendarFont = new Font("Segoe UI", 10F);
+            dtNgayNhap.CustomFormat = "dd/MM/yyyy";
             dtNgayNhap.Font = new Font("Segoe UI", 10F);
             dtNgayNhap.Format = DateTimePickerFormat.Custom;
-            dtNgayNhap.Location = new Point(176, 121);
+            dtNgayNhap.Location = new Point(176, 115);
+            dtNgayNhap.Margin = new Padding(20, 3, 3, 3);
+            dtNgayNhap.MinDate = new DateTime(1800, 1, 1, 0, 0, 0, 0);
             dtNgayNhap.Name = "dtNgayNhap";
             dtNgayNhap.Size = new Size(190, 25);
             dtNgayNhap.TabIndex = 2;
             dtNgayNhap.Value = new DateTime(2025, 3, 8, 0, 0, 0, 0);
+            dtNgayNhap.Enter += dtNgayNhap_Enter;
+            dtNgayNhap.Leave += dtNgayNhap_Leave;
             // 
             // NmrSoLuong
             // 
@@ -227,16 +253,79 @@
             NmrSoLuong.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             NmrSoLuong.Name = "NmrSoLuong";
             NmrSoLuong.Size = new Size(190, 25);
+            NmrSoLuong.StateActive.Border.Color1 = Color.Black;
             NmrSoLuong.StateActive.Content.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             NmrSoLuong.StateActive.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
             NmrSoLuong.TabIndex = 5;
+            NmrSoLuong.ThousandsSeparator = true;
+            NmrSoLuong.TrailingZeroes = false;
             NmrSoLuong.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            // 
+            // TenHangWarn
+            // 
+            TenHangWarn.AutoSize = true;
+            TenHangWarn.ForeColor = Color.Red;
+            TenHangWarn.Location = new Point(175, 85);
+            TenHangWarn.Name = "TenHangWarn";
+            TenHangWarn.Size = new Size(0, 15);
+            TenHangWarn.TabIndex = 45;
+            // 
+            // dtwarn
+            // 
+            dtwarn.AutoSize = true;
+            dtwarn.ForeColor = Color.Red;
+            dtwarn.Location = new Point(176, 142);
+            dtwarn.Name = "dtwarn";
+            dtwarn.Size = new Size(0, 15);
+            dtwarn.TabIndex = 46;
+            // 
+            // pricewarn
+            // 
+            pricewarn.AutoSize = true;
+            pricewarn.ForeColor = Color.Red;
+            pricewarn.Location = new Point(176, 209);
+            pricewarn.Name = "pricewarn";
+            pricewarn.Size = new Size(0, 15);
+            pricewarn.TabIndex = 47;
+            // 
+            // nccwarn
+            // 
+            nccwarn.AutoSize = true;
+            nccwarn.ForeColor = Color.Red;
+            nccwarn.Location = new Point(176, 267);
+            nccwarn.Name = "nccwarn";
+            nccwarn.Size = new Size(0, 15);
+            nccwarn.TabIndex = 48;
+            // 
+            // soluongwarn
+            // 
+            soluongwarn.AutoSize = true;
+            soluongwarn.ForeColor = Color.Red;
+            soluongwarn.Location = new Point(552, 82);
+            soluongwarn.Name = "soluongwarn";
+            soluongwarn.Size = new Size(0, 15);
+            soluongwarn.TabIndex = 49;
+            // 
+            // dvtinhwarn
+            // 
+            dvtinhwarn.AutoSize = true;
+            dvtinhwarn.ForeColor = Color.Red;
+            dvtinhwarn.Location = new Point(552, 142);
+            dvtinhwarn.Name = "dvtinhwarn";
+            dvtinhwarn.Size = new Size(0, 15);
+            dvtinhwarn.TabIndex = 50;
             // 
             // FAddHH
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 342);
+            Controls.Add(dvtinhwarn);
+            Controls.Add(soluongwarn);
+            Controls.Add(nccwarn);
+            Controls.Add(pricewarn);
+            Controls.Add(dtwarn);
+            Controls.Add(TenHangWarn);
             Controls.Add(NmrSoLuong);
             Controls.Add(dtNgayNhap);
             Controls.Add(btnConfirm);
@@ -252,6 +341,7 @@
             Controls.Add(txtTenHang);
             Controls.Add(cbLoaiHang);
             Controls.Add(txtNhaCC);
+            MaximizeBox = false;
             Name = "FAddHH";
             Text = "Thêm hàng";
             Load += FAddHH_Load;
@@ -276,5 +366,11 @@
         private Krypton.Toolkit.KryptonTextBox txtNhaCC;
         private DateTimePicker dtNgayNhap;
         private Krypton.Toolkit.KryptonNumericUpDown NmrSoLuong;
+        private Label TenHangWarn;
+        private Label dtwarn;
+        private Label pricewarn;
+        private Label nccwarn;
+        private Label soluongwarn;
+        private Label dvtinhwarn;
     }
 }

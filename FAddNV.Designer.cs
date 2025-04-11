@@ -45,6 +45,12 @@
             txtDiaChi = new Krypton.Toolkit.KryptonTextBox();
             btnConfirm = new CuoreUI.Controls.cuiButton();
             dtNgaySinh = new DateTimePicker();
+            tennvwarn = new Label();
+            dtwarn = new Label();
+            diachiwarn = new Label();
+            luongwarn = new Label();
+            emailwarn = new Label();
+            sdtwarn = new Label();
             SuspendLayout();
             // 
             // txtSDT
@@ -52,9 +58,12 @@
             txtSDT.Location = new Point(526, 180);
             txtSDT.Name = "txtSDT";
             txtSDT.Size = new Size(190, 25);
+            txtSDT.StateActive.Border.Color1 = Color.Black;
             txtSDT.StateActive.Content.Color1 = Color.Black;
             txtSDT.StateActive.Content.Font = new Font("Segoe UI", 10F);
             txtSDT.TabIndex = 7;
+            txtSDT.Enter += txtSDT_Enter;
+            txtSDT.Leave += txtSDT_Leave;
             // 
             // cbGioiTinh
             // 
@@ -91,27 +100,36 @@
             txtTenNV.Location = new Point(181, 54);
             txtTenNV.Name = "txtTenNV";
             txtTenNV.Size = new Size(190, 25);
+            txtTenNV.StateActive.Border.Color1 = Color.Black;
             txtTenNV.StateActive.Content.Color1 = Color.Black;
             txtTenNV.StateActive.Content.Font = new Font("Segoe UI", 10F);
             txtTenNV.TabIndex = 1;
+            txtTenNV.Enter += txtTenNV_Enter;
+            txtTenNV.Leave += txtTenNV_Leave;
             // 
             // txtLuong
             // 
             txtLuong.Location = new Point(526, 54);
             txtLuong.Name = "txtLuong";
             txtLuong.Size = new Size(190, 25);
+            txtLuong.StateActive.Border.Color1 = Color.Black;
             txtLuong.StateActive.Content.Color1 = Color.Black;
             txtLuong.StateActive.Content.Font = new Font("Segoe UI", 10F);
             txtLuong.TabIndex = 5;
+            txtLuong.Enter += txtLuong_Enter;
+            txtLuong.Leave += txtLuong_Leave;
             // 
             // txtEmail
             // 
             txtEmail.Location = new Point(526, 115);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(190, 25);
+            txtEmail.StateActive.Border.Color1 = Color.Black;
             txtEmail.StateActive.Content.Color1 = Color.Black;
             txtEmail.StateActive.Content.Font = new Font("Segoe UI", 10F);
             txtEmail.TabIndex = 6;
+            txtEmail.Enter += txtEmail_Enter;
+            txtEmail.Leave += txtEmail_Leave;
             // 
             // cuiLabel1
             // 
@@ -206,9 +224,12 @@
             txtDiaChi.Location = new Point(181, 241);
             txtDiaChi.Name = "txtDiaChi";
             txtDiaChi.Size = new Size(190, 25);
+            txtDiaChi.StateActive.Border.Color1 = Color.Black;
             txtDiaChi.StateActive.Content.Color1 = Color.Black;
             txtDiaChi.StateActive.Content.Font = new Font("Segoe UI", 10F);
             txtDiaChi.TabIndex = 4;
+            txtDiaChi.Enter += txtDiaChi_Enter;
+            txtDiaChi.Leave += txtDiaChi_Leave;
             // 
             // btnConfirm
             // 
@@ -255,12 +276,74 @@
             dtNgaySinh.Size = new Size(190, 25);
             dtNgaySinh.TabIndex = 2;
             dtNgaySinh.Value = new DateTime(2025, 3, 8, 0, 0, 0, 0);
+            dtNgaySinh.Enter += dtNgaySinh_Enter;
+            dtNgaySinh.Leave += dtNgaySinh_Leave;
+            // 
+            // tennvwarn
+            // 
+            tennvwarn.AutoSize = true;
+            tennvwarn.ForeColor = Color.Red;
+            tennvwarn.Location = new Point(181, 82);
+            tennvwarn.Name = "tennvwarn";
+            tennvwarn.Size = new Size(0, 15);
+            tennvwarn.TabIndex = 46;
+            // 
+            // dtwarn
+            // 
+            dtwarn.AutoSize = true;
+            dtwarn.ForeColor = Color.Red;
+            dtwarn.Location = new Point(181, 143);
+            dtwarn.Name = "dtwarn";
+            dtwarn.Size = new Size(0, 15);
+            dtwarn.TabIndex = 47;
+            // 
+            // diachiwarn
+            // 
+            diachiwarn.AutoSize = true;
+            diachiwarn.ForeColor = Color.Red;
+            diachiwarn.Location = new Point(181, 269);
+            diachiwarn.Name = "diachiwarn";
+            diachiwarn.Size = new Size(0, 15);
+            diachiwarn.TabIndex = 48;
+            // 
+            // luongwarn
+            // 
+            luongwarn.AutoSize = true;
+            luongwarn.ForeColor = Color.Red;
+            luongwarn.Location = new Point(526, 82);
+            luongwarn.Name = "luongwarn";
+            luongwarn.Size = new Size(0, 15);
+            luongwarn.TabIndex = 49;
+            // 
+            // emailwarn
+            // 
+            emailwarn.AutoSize = true;
+            emailwarn.ForeColor = Color.Red;
+            emailwarn.Location = new Point(526, 143);
+            emailwarn.Name = "emailwarn";
+            emailwarn.Size = new Size(0, 15);
+            emailwarn.TabIndex = 50;
+            // 
+            // sdtwarn
+            // 
+            sdtwarn.AutoSize = true;
+            sdtwarn.ForeColor = Color.Red;
+            sdtwarn.Location = new Point(526, 208);
+            sdtwarn.Name = "sdtwarn";
+            sdtwarn.Size = new Size(0, 15);
+            sdtwarn.TabIndex = 51;
             // 
             // FAddNV
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 400);
+            ClientSize = new Size(800, 386);
+            Controls.Add(sdtwarn);
+            Controls.Add(emailwarn);
+            Controls.Add(luongwarn);
+            Controls.Add(diachiwarn);
+            Controls.Add(dtwarn);
+            Controls.Add(tennvwarn);
             Controls.Add(dtNgaySinh);
             Controls.Add(btnConfirm);
             Controls.Add(txtDiaChi);
@@ -278,6 +361,7 @@
             Controls.Add(cbChucVu);
             Controls.Add(cbGioiTinh);
             Controls.Add(txtSDT);
+            MaximizeBox = false;
             Name = "FAddNV";
             Text = "Thêm nhân viên";
             Load += FAddNV_Load;
@@ -304,5 +388,11 @@
         private Krypton.Toolkit.KryptonTextBox txtDiaChi;
         private CuoreUI.Controls.cuiButton btnConfirm;
         private DateTimePicker dtNgaySinh;
+        private Label tennvwarn;
+        private Label dtwarn;
+        private Label diachiwarn;
+        private Label luongwarn;
+        private Label emailwarn;
+        private Label sdtwarn;
     }
 }

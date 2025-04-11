@@ -45,6 +45,11 @@
             txtNhaCC = new Krypton.Toolkit.KryptonTextBox();
             dtNgayNhap = new DateTimePicker();
             NmrSoLuong = new Krypton.Toolkit.KryptonNumericUpDown();
+            dvtinhwarn = new Label();
+            nccwarn = new Label();
+            pricewarn = new Label();
+            dtwarn = new Label();
+            TenHangWarn = new Label();
             SuspendLayout();
             // 
             // btnConfirm
@@ -88,9 +93,12 @@
             txtGiaTien.Location = new Point(180, 242);
             txtGiaTien.Name = "txtGiaTien";
             txtGiaTien.Size = new Size(190, 25);
+            txtGiaTien.StateActive.Border.Color1 = Color.Black;
             txtGiaTien.StateActive.Content.Color1 = Color.Black;
             txtGiaTien.StateActive.Content.Font = new Font("Segoe UI", 10F);
             txtGiaTien.TabIndex = 4;
+            txtGiaTien.Enter += txtGiaTien_Enter;
+            txtGiaTien.Leave += txtGiaTien_Leave;
             // 
             // cuiLabel9
             // 
@@ -141,7 +149,7 @@
             cuiLabel4.Content = "Số\\ lượng";
             cuiLabel4.Font = new Font("Segoe UI", 12F);
             cuiLabel4.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Left;
-            cuiLabel4.Location = new Point(411, 51);
+            cuiLabel4.Location = new Point(411, 54);
             cuiLabel4.Margin = new Padding(4, 3, 4, 3);
             cuiLabel4.Name = "cuiLabel4";
             cuiLabel4.Size = new Size(98, 28);
@@ -174,10 +182,10 @@
             cuiLabel1.Content = "Nhà\\ cung\\ cấp";
             cuiLabel1.Font = new Font("Segoe UI", 12F);
             cuiLabel1.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Left;
-            cuiLabel1.Location = new Point(411, 177);
+            cuiLabel1.Location = new Point(399, 177);
             cuiLabel1.Margin = new Padding(4, 3, 4, 3);
             cuiLabel1.Name = "cuiLabel1";
-            cuiLabel1.Size = new Size(98, 28);
+            cuiLabel1.Size = new Size(110, 28);
             cuiLabel1.TabIndex = 55;
             // 
             // txtDonViTinh
@@ -185,9 +193,12 @@
             txtDonViTinh.Location = new Point(528, 115);
             txtDonViTinh.Name = "txtDonViTinh";
             txtDonViTinh.Size = new Size(190, 25);
+            txtDonViTinh.StateActive.Border.Color1 = Color.Black;
             txtDonViTinh.StateActive.Content.Color1 = Color.Black;
             txtDonViTinh.StateActive.Content.Font = new Font("Segoe UI", 10F);
             txtDonViTinh.TabIndex = 6;
+            txtDonViTinh.Enter += txtDonViTinh_Enter;
+            txtDonViTinh.Leave += txtDonViTinh_Leave;
             // 
             // txtMaHang
             // 
@@ -196,6 +207,7 @@
             txtMaHang.Name = "txtMaHang";
             txtMaHang.ReadOnly = true;
             txtMaHang.Size = new Size(190, 25);
+            txtMaHang.StateActive.Border.Color1 = Color.Black;
             txtMaHang.StateActive.Content.Color1 = Color.Black;
             txtMaHang.StateActive.Content.Font = new Font("Segoe UI", 10F);
             txtMaHang.TabIndex = 1;
@@ -205,9 +217,12 @@
             txtTenHang.Location = new Point(180, 115);
             txtTenHang.Name = "txtTenHang";
             txtTenHang.Size = new Size(190, 25);
+            txtTenHang.StateActive.Border.Color1 = Color.Black;
             txtTenHang.StateActive.Content.Color1 = Color.Black;
             txtTenHang.StateActive.Content.Font = new Font("Segoe UI", 10F);
             txtTenHang.TabIndex = 2;
+            txtTenHang.Enter += txtTenHang_Enter;
+            txtTenHang.Leave += txtTenHang_Leave;
             // 
             // cbLoaiHang
             // 
@@ -229,19 +244,24 @@
             txtNhaCC.Location = new Point(528, 180);
             txtNhaCC.Name = "txtNhaCC";
             txtNhaCC.Size = new Size(190, 25);
+            txtNhaCC.StateActive.Border.Color1 = Color.Black;
             txtNhaCC.StateActive.Content.Color1 = Color.Black;
             txtNhaCC.StateActive.Content.Font = new Font("Segoe UI", 10F);
             txtNhaCC.TabIndex = 7;
+            txtNhaCC.Enter += txtNhaCC_Enter;
+            txtNhaCC.Leave += txtNhaCC_Leave;
             // 
             // dtNgayNhap
             // 
             dtNgayNhap.Font = new Font("Segoe UI", 10F);
-            dtNgayNhap.Format = DateTimePickerFormat.Custom;
+            dtNgayNhap.Format = DateTimePickerFormat.Short;
             dtNgayNhap.Location = new Point(180, 180);
             dtNgayNhap.Name = "dtNgayNhap";
             dtNgayNhap.Size = new Size(190, 25);
             dtNgayNhap.TabIndex = 3;
             dtNgayNhap.Value = new DateTime(2025, 3, 8, 0, 0, 0, 0);
+            dtNgayNhap.Enter += dtNgayNhap_Enter;
+            dtNgayNhap.Leave += dtNgayNhap_Leave;
             // 
             // NmrSoLuong
             // 
@@ -256,11 +276,61 @@
             NmrSoLuong.TabIndex = 5;
             NmrSoLuong.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
+            // dvtinhwarn
+            // 
+            dvtinhwarn.AutoSize = true;
+            dvtinhwarn.ForeColor = Color.Red;
+            dvtinhwarn.Location = new Point(528, 143);
+            dvtinhwarn.Name = "dvtinhwarn";
+            dvtinhwarn.Size = new Size(0, 15);
+            dvtinhwarn.TabIndex = 68;
+            // 
+            // nccwarn
+            // 
+            nccwarn.AutoSize = true;
+            nccwarn.ForeColor = Color.Red;
+            nccwarn.Location = new Point(528, 208);
+            nccwarn.Name = "nccwarn";
+            nccwarn.Size = new Size(0, 15);
+            nccwarn.TabIndex = 66;
+            // 
+            // pricewarn
+            // 
+            pricewarn.AutoSize = true;
+            pricewarn.ForeColor = Color.Red;
+            pricewarn.Location = new Point(181, 270);
+            pricewarn.Name = "pricewarn";
+            pricewarn.Size = new Size(0, 15);
+            pricewarn.TabIndex = 65;
+            // 
+            // dtwarn
+            // 
+            dtwarn.AutoSize = true;
+            dtwarn.ForeColor = Color.Red;
+            dtwarn.Location = new Point(181, 208);
+            dtwarn.Name = "dtwarn";
+            dtwarn.Size = new Size(0, 15);
+            dtwarn.TabIndex = 64;
+            // 
+            // TenHangWarn
+            // 
+            TenHangWarn.AutoSize = true;
+            TenHangWarn.ForeColor = Color.Red;
+            TenHangWarn.Location = new Point(180, 143);
+            TenHangWarn.Name = "TenHangWarn";
+            TenHangWarn.Size = new Size(0, 15);
+            TenHangWarn.TabIndex = 63;
+            // 
             // FEditHH
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 391);
+            Controls.Add(dvtinhwarn);
+            Controls.Add(nccwarn);
+            Controls.Add(pricewarn);
+            Controls.Add(dtwarn);
+            Controls.Add(TenHangWarn);
             Controls.Add(NmrSoLuong);
             Controls.Add(dtNgayNhap);
             Controls.Add(btnConfirm);
@@ -278,6 +348,7 @@
             Controls.Add(txtTenHang);
             Controls.Add(cbLoaiHang);
             Controls.Add(txtNhaCC);
+            MaximizeBox = false;
             Name = "FEditHH";
             Text = "Sửa hàng";
             Load += FEditHH_Load;
@@ -304,5 +375,10 @@
         private Krypton.Toolkit.KryptonTextBox txtNhaCC;
         private DateTimePicker dtNgayNhap;
         private Krypton.Toolkit.KryptonNumericUpDown NmrSoLuong;
+        private Label dvtinhwarn;
+        private Label nccwarn;
+        private Label pricewarn;
+        private Label dtwarn;
+        private Label TenHangWarn;
     }
 }
