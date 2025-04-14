@@ -15,12 +15,12 @@ namespace QLST_rebase
 {
     public partial class FAddHH : Form
     {
-        bool[] tempvalid = new bool[4];
+        bool[] tempvalid = new bool[5];
         public FAddHH()
         {
             InitializeComponent();
             dtNgayNhap.Value = DateTime.Today;
-            Array.ConvertAll(tempvalid, e => true);
+            Array.Fill(tempvalid,true);
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
@@ -34,14 +34,14 @@ namespace QLST_rebase
                     break;
                 }
             if (!valid) MessageBox.Show("Vui lòng kiểm tra lại thông tin"); else
-                try
-                {
-                    using (DataDBContext context = new())
+            try
+            {
+                using (DataDBContext context = new())
                     {
                         var goods = new goods
                         {
                             goodsName = txtTenHang.Text,
-                            entryDate = DateOnly.Parse(dtNgayNhap.Text),
+                            entryDate = DateOnly.Parse(dtNgayNhap.Value.ToShortDateString()),
                             price = Double.Parse(txtGiaTien.Text),
                             quantity = int.Parse(NmrSoLuong.Value.ToString()),
                             unit = txtDonViTinh.Text,

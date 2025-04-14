@@ -21,7 +21,8 @@ namespace QLST_rebase
         public FAddNV()
         {
             InitializeComponent();
-            Array.ConvertAll(tempvalid, e => true);
+            dtNgaySinh.Value = DateTime.Today;
+            Array.Fill(tempvalid, true);
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
@@ -47,22 +48,22 @@ namespace QLST_rebase
                 {
                     if (phonenumber.Length == 10)
                     {
-                        using (DataDBContext context = new()) //2
+                        using (DataDBContext context = new())
                         {
-                            var staff = new staff //3
+                            var staff = new staff
                             {
                                 staffName = TenNV,
-                                birthDate = DateOnly.Parse(BirthDate), //4
+                                birthDate = DateOnly.Parse(BirthDate),
                                 gender = gender,
                                 address = addres,
-                                salary = double.Parse(salary), //5
+                                salary = double.Parse(salary),
                                 email = email,
                                 phoneNumber = phonenumber,
-                                position = position //6 (cac text)
+                                position = position 
                             };
-                            context.staffs.Add(staff); //7
-                            context.SaveChanges();//8
-                            MessageBox.Show("Thêm thành công!");     //9  
+                            context.staffs.Add(staff); 
+                            context.SaveChanges();
+                            MessageBox.Show("Thêm thành công!");   
                         }
                     }
                     else
@@ -71,9 +72,9 @@ namespace QLST_rebase
                 else
                     MessageBox.Show("Vui lòng kiểm tra lại thông tin");
             }
-            catch (Exception) //10
+            catch (Exception)
             {
-                MessageBox.Show("Vui lòng kiểm tra lại thông tin"); //11
+                MessageBox.Show("Vui lòng kiểm tra lại thông tin");
             }
         }
 

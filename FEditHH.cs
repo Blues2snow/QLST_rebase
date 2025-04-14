@@ -15,10 +15,11 @@ namespace QLST_rebase
 {
     public partial class FEditHH : Form
     {
-        bool[] tempvalid = [true, true, true, true, true];
+        bool[] tempvalid = new bool[5];
         public FEditHH()
         {
             InitializeComponent();
+            Array.ConvertAll(tempvalid, e => true);
         }
         public void getId(string a)
         {
@@ -33,7 +34,7 @@ namespace QLST_rebase
                 if (item != null)
                 {
                     txtTenHang.Text = item.goodsName.ToString();
-                    dtNgayNhap.Value = DateTime.Parse(item.entryDate.ToString());
+                    dtNgayNhap.Value = DateTime.Today;
                     txtGiaTien.Text = item.price.ToString();
                     NmrSoLuong.Value = int.Parse(item.quantity.ToString());
                     txtDonViTinh.Text = item.unit.ToString();
@@ -59,7 +60,7 @@ namespace QLST_rebase
                 if (goods != null)
                 {
                     goods.goodsName = txtTenHang.Text;
-                    goods.entryDate = DateOnly.Parse(dtNgayNhap.Text);
+                    goods.entryDate = DateOnly.Parse(dtNgayNhap.Value.ToShortDateString());
                     goods.price = double.Parse(txtGiaTien.Text);
                     goods.quantity = int.Parse(NmrSoLuong.Value.ToString());
                     goods.unit = txtDonViTinh.Text;
