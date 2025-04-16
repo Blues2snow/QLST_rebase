@@ -33,14 +33,6 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             dgvNV = new ReaLTaiizor.Controls.PoisonDataGridView();
-            cuiLabel1 = new CuoreUI.Controls.cuiLabel();
-            btnAdd = new CuoreUI.Controls.cuiButton();
-            txtSearch = new CuoreUI.Controls.cuiTextBox2();
-            cuiLabel2 = new CuoreUI.Controls.cuiLabel();
-            lbDate = new CuoreUI.Controls.cuiLabel();
-            lbTime = new CuoreUI.Controls.cuiLabel();
-            pictureBox1 = new PictureBox();
-            timer1 = new System.Windows.Forms.Timer(components);
             staffId = new DataGridViewTextBoxColumn();
             staffName = new DataGridViewTextBoxColumn();
             birthDate = new DataGridViewTextBoxColumn();
@@ -52,6 +44,14 @@
             position = new DataGridViewTextBoxColumn();
             Edit = new DataGridViewImageColumn();
             Delete = new DataGridViewImageColumn();
+            cuiLabel1 = new CuoreUI.Controls.cuiLabel();
+            btnAdd = new CuoreUI.Controls.cuiButton();
+            txtSearch = new CuoreUI.Controls.cuiTextBox2();
+            cuiLabel2 = new CuoreUI.Controls.cuiLabel();
+            lbDate = new CuoreUI.Controls.cuiLabel();
+            lbTime = new CuoreUI.Controls.cuiLabel();
+            pictureBox1 = new PictureBox();
+            timer1 = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)dgvNV).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -105,127 +105,6 @@
             dgvNV.Size = new Size(905, 466);
             dgvNV.TabIndex = 1;
             dgvNV.CellClick += dgvNV_CellClick;
-            // 
-            // cuiLabel1
-            // 
-            cuiLabel1.Content = "Nhân\\ viên";
-            cuiLabel1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            cuiLabel1.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Center;
-            cuiLabel1.Location = new Point(4, 97);
-            cuiLabel1.Margin = new Padding(4, 3, 4, 3);
-            cuiLabel1.Name = "cuiLabel1";
-            cuiLabel1.Size = new Size(192, 35);
-            cuiLabel1.TabIndex = 2;
-            // 
-            // btnAdd
-            // 
-            btnAdd.CheckButton = false;
-            btnAdd.Checked = false;
-            btnAdd.CheckedBackground = Color.FromArgb(255, 106, 0);
-            btnAdd.CheckedForeColor = Color.White;
-            btnAdd.CheckedImageTint = Color.White;
-            btnAdd.CheckedOutline = Color.FromArgb(255, 106, 0);
-            btnAdd.Content = "Thêm";
-            btnAdd.DialogResult = DialogResult.None;
-            btnAdd.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAdd.ForeColor = Color.White;
-            btnAdd.HoverBackground = Color.FromArgb(200, 255, 106, 0);
-            btnAdd.HoveredImageTint = Color.White;
-            btnAdd.HoverForeColor = Color.White;
-            btnAdd.HoverOutline = Color.Empty;
-            btnAdd.Image = null;
-            btnAdd.ImageAutoCenter = true;
-            btnAdd.ImageExpand = new Point(0, 0);
-            btnAdd.ImageOffset = new Point(0, 0);
-            btnAdd.ImageTint = Color.White;
-            btnAdd.Location = new Point(192, 97);
-            btnAdd.Name = "btnAdd";
-            btnAdd.NormalBackground = Color.FromArgb(255, 106, 0);
-            btnAdd.NormalOutline = Color.Empty;
-            btnAdd.OutlineThickness = 1.6F;
-            btnAdd.PressedBackground = Color.FromArgb(255, 106, 0);
-            btnAdd.PressedForeColor = Color.White;
-            btnAdd.PressedImageTint = Color.White;
-            btnAdd.PressedOutline = Color.Empty;
-            btnAdd.Rounding = new Padding(8);
-            btnAdd.Size = new Size(122, 35);
-            btnAdd.TabIndex = 3;
-            btnAdd.TextOffset = new Point(0, 0);
-            btnAdd.Click += btnAdd_Click;
-            // 
-            // txtSearch
-            // 
-            txtSearch.BackColor = Color.White;
-            txtSearch.BorderColor = Color.FromArgb(64, 64, 64);
-            txtSearch.BorderFocusColor = Color.FromArgb(255, 106, 0);
-            txtSearch.BorderSize = 1;
-            txtSearch.Content = "";
-            txtSearch.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtSearch.ForeColor = Color.Gray;
-            txtSearch.Location = new Point(617, 97);
-            txtSearch.Margin = new Padding(4);
-            txtSearch.Multiline = false;
-            txtSearch.Name = "txtSearch";
-            txtSearch.Padding = new Padding(40, 10, 40, 0);
-            txtSearch.PasswordChar = false;
-            txtSearch.PlaceholderColor = Color.DimGray;
-            txtSearch.PlaceholderText = "Tìm kiếm tên";
-            txtSearch.Rounding = 16;
-            txtSearch.Size = new Size(266, 35);
-            txtSearch.TabIndex = 4;
-            txtSearch.TextOffset = new Size(25, 0);
-            txtSearch.UnderlinedStyle = false;
-            txtSearch.ContentChanged += txtSearch_ContentChanged;
-            // 
-            // cuiLabel2
-            // 
-            cuiLabel2.Content = "Hôm\\ nay\\ là:";
-            cuiLabel2.Font = new Font("Segoe UI", 12F);
-            cuiLabel2.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Center;
-            cuiLabel2.Location = new Point(617, 17);
-            cuiLabel2.Margin = new Padding(4, 3, 4, 3);
-            cuiLabel2.Name = "cuiLabel2";
-            cuiLabel2.Size = new Size(104, 27);
-            cuiLabel2.TabIndex = 5;
-            // 
-            // lbDate
-            // 
-            lbDate.Content = "N/A";
-            lbDate.Font = new Font("Segoe UI", 12F);
-            lbDate.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Center;
-            lbDate.Location = new Point(729, 17);
-            lbDate.Margin = new Padding(4, 3, 4, 3);
-            lbDate.Name = "lbDate";
-            lbDate.Size = new Size(172, 27);
-            lbDate.TabIndex = 6;
-            // 
-            // lbTime
-            // 
-            lbTime.Content = "N/A";
-            lbTime.Font = new Font("Segoe UI", 12F);
-            lbTime.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Center;
-            lbTime.Location = new Point(729, 50);
-            lbTime.Margin = new Padding(4, 3, 4, 3);
-            lbTime.Name = "lbTime";
-            lbTime.Size = new Size(172, 27);
-            lbTime.TabIndex = 7;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.AccessibleRole = AccessibleRole.None;
-            pictureBox1.BackColor = Color.White;
-            pictureBox1.BackgroundImageLayout = ImageLayout.None;
-            pictureBox1.Image = Properties.Resources.icons8_search_26;
-            pictureBox1.Location = new Point(626, 105);
-            pictureBox1.Margin = new Padding(0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(26, 26);
-            pictureBox1.TabIndex = 8;
-            pictureBox1.TabStop = false;
-            // 
-            // timer1
-            // 
-            timer1.Tick += timer1_Tick;
             // 
             // staffId
             // 
@@ -309,6 +188,132 @@
             Delete.Resizable = DataGridViewTriState.True;
             Delete.SortMode = DataGridViewColumnSortMode.Automatic;
             Delete.Width = 50;
+            // 
+            // cuiLabel1
+            // 
+            cuiLabel1.Content = "Nhân\\ viên";
+            cuiLabel1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            cuiLabel1.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Center;
+            cuiLabel1.Location = new Point(4, 97);
+            cuiLabel1.Margin = new Padding(4, 3, 4, 3);
+            cuiLabel1.Name = "cuiLabel1";
+            cuiLabel1.Size = new Size(192, 35);
+            cuiLabel1.TabIndex = 2;
+            // 
+            // btnAdd
+            // 
+            btnAdd.CheckButton = false;
+            btnAdd.Checked = false;
+            btnAdd.CheckedBackground = Color.FromArgb(255, 106, 0);
+            btnAdd.CheckedForeColor = Color.White;
+            btnAdd.CheckedImageTint = Color.White;
+            btnAdd.CheckedOutline = Color.FromArgb(255, 106, 0);
+            btnAdd.Content = "Thêm";
+            btnAdd.DialogResult = DialogResult.None;
+            btnAdd.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAdd.ForeColor = Color.White;
+            btnAdd.HoverBackground = Color.FromArgb(200, 255, 106, 0);
+            btnAdd.HoveredImageTint = Color.White;
+            btnAdd.HoverForeColor = Color.White;
+            btnAdd.HoverOutline = Color.Empty;
+            btnAdd.Image = null;
+            btnAdd.ImageAutoCenter = true;
+            btnAdd.ImageExpand = new Point(0, 0);
+            btnAdd.ImageOffset = new Point(0, 0);
+            btnAdd.ImageTint = Color.White;
+            btnAdd.Location = new Point(192, 97);
+            btnAdd.Name = "btnAdd";
+            btnAdd.NormalBackground = Color.FromArgb(255, 106, 0);
+            btnAdd.NormalOutline = Color.Empty;
+            btnAdd.OutlineThickness = 1.6F;
+            btnAdd.PressedBackground = Color.FromArgb(255, 106, 0);
+            btnAdd.PressedForeColor = Color.White;
+            btnAdd.PressedImageTint = Color.White;
+            btnAdd.PressedOutline = Color.Empty;
+            btnAdd.Rounding = new Padding(8);
+            btnAdd.Size = new Size(122, 35);
+            btnAdd.TabIndex = 3;
+            btnAdd.TextOffset = new Point(0, 0);
+            btnAdd.Click += btnAdd_Click;
+            // 
+            // txtSearch
+            // 
+            txtSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            txtSearch.BackColor = Color.White;
+            txtSearch.BorderColor = Color.FromArgb(64, 64, 64);
+            txtSearch.BorderFocusColor = Color.FromArgb(255, 106, 0);
+            txtSearch.BorderSize = 1;
+            txtSearch.Content = "";
+            txtSearch.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtSearch.ForeColor = Color.Gray;
+            txtSearch.Location = new Point(617, 97);
+            txtSearch.Margin = new Padding(4);
+            txtSearch.Multiline = false;
+            txtSearch.Name = "txtSearch";
+            txtSearch.Padding = new Padding(40, 10, 40, 0);
+            txtSearch.PasswordChar = false;
+            txtSearch.PlaceholderColor = Color.DimGray;
+            txtSearch.PlaceholderText = "Tìm kiếm tên";
+            txtSearch.Rounding = 16;
+            txtSearch.Size = new Size(266, 35);
+            txtSearch.TabIndex = 4;
+            txtSearch.TextOffset = new Size(25, 0);
+            txtSearch.UnderlinedStyle = false;
+            txtSearch.ContentChanged += txtSearch_ContentChanged;
+            // 
+            // cuiLabel2
+            // 
+            cuiLabel2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            cuiLabel2.Content = "Hôm\\ nay\\ là:";
+            cuiLabel2.Font = new Font("Segoe UI", 12F);
+            cuiLabel2.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Center;
+            cuiLabel2.Location = new Point(617, 17);
+            cuiLabel2.Margin = new Padding(4, 3, 4, 3);
+            cuiLabel2.Name = "cuiLabel2";
+            cuiLabel2.Size = new Size(104, 27);
+            cuiLabel2.TabIndex = 5;
+            // 
+            // lbDate
+            // 
+            lbDate.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            lbDate.Content = "N/A";
+            lbDate.Font = new Font("Segoe UI", 12F);
+            lbDate.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Center;
+            lbDate.Location = new Point(729, 17);
+            lbDate.Margin = new Padding(4, 3, 4, 3);
+            lbDate.Name = "lbDate";
+            lbDate.Size = new Size(172, 27);
+            lbDate.TabIndex = 6;
+            // 
+            // lbTime
+            // 
+            lbTime.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            lbTime.Content = "N/A";
+            lbTime.Font = new Font("Segoe UI", 12F);
+            lbTime.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Center;
+            lbTime.Location = new Point(729, 50);
+            lbTime.Margin = new Padding(4, 3, 4, 3);
+            lbTime.Name = "lbTime";
+            lbTime.Size = new Size(172, 27);
+            lbTime.TabIndex = 7;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.AccessibleRole = AccessibleRole.None;
+            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            pictureBox1.BackColor = Color.White;
+            pictureBox1.BackgroundImageLayout = ImageLayout.None;
+            pictureBox1.Image = Properties.Resources.icons8_search_26;
+            pictureBox1.Location = new Point(626, 105);
+            pictureBox1.Margin = new Padding(0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(26, 26);
+            pictureBox1.TabIndex = 8;
+            pictureBox1.TabStop = false;
+            // 
+            // timer1
+            // 
+            timer1.Tick += timer1_Tick;
             // 
             // UC_QLNV
             // 

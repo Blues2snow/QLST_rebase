@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -33,32 +34,41 @@ namespace QLST_rebase
                     valid = false;
                     break;
                 }
-            if (!valid) MessageBox.Show("Vui lòng kiểm tra lại thông tin"); else
+            if (!valid) MessageBox.Show("Vui lòng kiểm tra lại thông tin");
+            else
+                AddHH(txtTenHang.Text, dtNgayNhap.Value.ToShortDateString(), txtGiaTien.Text, NmrSoLuong.Value.ToString(), txtDonViTinh.Text, txtNhaCC.Text, cbLoaiHang.Text);
+        }
+        public void AddHH(string goodsName, string entryDate, string price, string quantity, string unit, string suppiler, string type)
+        {
+            string pattern = @"^[a-zA-Z0-9\s]+$";
             try
             {
+                if (!(goodsName != "" && entryDate != "" && price != "" & quantity != "" & unit != "" & suppiler != "" & type != ""))
+                    throw new Exception();
+                if (!(Regex.IsMatch(goodsName, pattern) && Regex.IsMatch(suppiler, pattern) && Regex.IsMatch(unit, pattern) && price.All(char.IsDigit)))
+                    throw new Exception();
                 using (DataDBContext context = new())
-                    {
-                        var goods = new goods
-                        {
-                            goodsName = txtTenHang.Text,
-                            entryDate = DateOnly.Parse(dtNgayNhap.Value.ToShortDateString()),
-                            price = Double.Parse(txtGiaTien.Text),
-                            quantity = int.Parse(NmrSoLuong.Value.ToString()),
-                            unit = txtDonViTinh.Text,
-                            suppiler = txtNhaCC.Text,
-                            type = cbLoaiHang.Text
-                        };
-                        context.goodss.Add(goods);
-                        context.SaveChanges();
-                        MessageBox.Show("Thêm thành công!");
-                    }
-                }
-                catch (Exception)
                 {
-                    MessageBox.Show("Vui lòng kiểm tra lại thông tin");
+                    var goods = new goods
+                    {
+                        goodsName = txtTenHang.Text,
+                        entryDate = DateOnly.Parse(dtNgayNhap.Value.ToShortDateString()),
+                        price = Double.Parse(txtGiaTien.Text),
+                        quantity = int.Parse(NmrSoLuong.Value.ToString()),
+                        unit = txtDonViTinh.Text,
+                        suppiler = txtNhaCC.Text,
+                        type = cbLoaiHang.Text
+                    };
+                    context.goodss.Add(goods);
+                    context.SaveChanges();
+                    MessageBox.Show("Thêm thành công!");
                 }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Vui lòng kiểm tra lại thông tin");
+            }
         }
-
         private void FAddHH_Load(object sender, EventArgs e)
         {
             cbLoaiHang.SelectedItem = "Thực phẩm";
@@ -66,10 +76,11 @@ namespace QLST_rebase
 
         private void txtTenHang_Leave(object sender, EventArgs e)
         {
+            string pattern = @"^[a-zA-Z0-9\s.,]+$";
             var tb = txtTenHang.Text;
             string temp = "";
+            if (!Regex.IsMatch(tb, pattern)) temp = "Vui lòng nhập đúng định dạng";
             if (tb.IsNullOrEmpty()) temp = "Tên hàng không được để trống";
-            if (!tb.All(char.IsLetterOrDigit)) temp = "Vui lòng nhập đúng định dạng";
             if (temp != "")
             {
                 tempvalid[0] = false;
@@ -104,8 +115,8 @@ namespace QLST_rebase
         {
             var tb = txtGiaTien.Text;
             string temp = "";
-            if (tb.IsNullOrEmpty()) temp = "Giá tiền không được để trống";
             if (!tb.All(char.IsDigit)) temp = "Vui lòng nhập đúng định dạng";
+            if (tb.IsNullOrEmpty()) temp = "Giá tiền không được để trống";
             if (!temp.IsNullOrEmpty())
             {
                 tempvalid[2] = false;
@@ -123,10 +134,11 @@ namespace QLST_rebase
 
         private void txtNhaCC_Leave(object sender, EventArgs e)
         {
+            string pattern = @"^[a-zA-Z0-9\s.,]+$";
             string tb = txtNhaCC.Text;
             string temp = "";
+            if (!Regex.IsMatch(tb, pattern)) temp = "Vui lòng nhập đúng định dạng";
             if (tb.IsNullOrEmpty()) temp = "Tên hàng không được để trống";
-            if (!tb.All(char.IsLetterOrDigit)) temp = "Vui lòng nhập đúng định dạng";
             if (!temp.IsNullOrEmpty())
             {
                 tempvalid[3] = false;
@@ -142,10 +154,11 @@ namespace QLST_rebase
         }
         private void txtDonViTinh_Leave(object sender, EventArgs e)
         {
+            string pattern = @"^[a-zA-Z0-9\s.,]+$";
             string tb = txtDonViTinh.Text;
             string temp = "";
+            if (!Regex.IsMatch(tb, pattern)) temp = "Vui lòng nhập đúng định dạng";
             if (tb.IsNullOrEmpty()) temp = "Tên hàng không được để trống";
-            if (!tb.All(char.IsLetter)) temp = "Vui lòng nhập đúng định dạng";
             if (!temp.IsNullOrEmpty())
             {
                 tempvalid[4] = false;

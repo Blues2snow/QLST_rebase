@@ -73,7 +73,7 @@
             btnConfirm.ImageExpand = new Point(0, 0);
             btnConfirm.ImageOffset = new Point(0, 0);
             btnConfirm.ImageTint = Color.White;
-            btnConfirm.Location = new Point(528, 312);
+            btnConfirm.Location = new Point(586, 308);
             btnConfirm.Name = "btnConfirm";
             btnConfirm.NormalBackground = Color.FromArgb(255, 106, 0);
             btnConfirm.NormalOutline = Color.Empty;
@@ -182,7 +182,7 @@
             cuiLabel1.Content = "Nhà\\ cung\\ cấp";
             cuiLabel1.Font = new Font("Segoe UI", 12F);
             cuiLabel1.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Left;
-            cuiLabel1.Location = new Point(399, 177);
+            cuiLabel1.Location = new Point(411, 177);
             cuiLabel1.Margin = new Padding(4, 3, 4, 3);
             cuiLabel1.Name = "cuiLabel1";
             cuiLabel1.Size = new Size(110, 28);
@@ -190,7 +190,7 @@
             // 
             // txtDonViTinh
             // 
-            txtDonViTinh.Location = new Point(528, 115);
+            txtDonViTinh.Location = new Point(574, 115);
             txtDonViTinh.Name = "txtDonViTinh";
             txtDonViTinh.Size = new Size(190, 25);
             txtDonViTinh.StateActive.Border.Color1 = Color.Black;
@@ -234,14 +234,14 @@
             cbLoaiHang.FormattingEnabled = true;
             cbLoaiHang.ItemHeight = 20;
             cbLoaiHang.Items.AddRange(new object[] { "Thực phẩm", "Hoá phẩm" });
-            cbLoaiHang.Location = new Point(528, 241);
+            cbLoaiHang.Location = new Point(574, 241);
             cbLoaiHang.Name = "cbLoaiHang";
             cbLoaiHang.Size = new Size(190, 26);
             cbLoaiHang.TabIndex = 8;
             // 
             // txtNhaCC
             // 
-            txtNhaCC.Location = new Point(528, 180);
+            txtNhaCC.Location = new Point(574, 180);
             txtNhaCC.Name = "txtNhaCC";
             txtNhaCC.Size = new Size(190, 25);
             txtNhaCC.StateActive.Border.Color1 = Color.Black;
@@ -266,7 +266,7 @@
             // NmrSoLuong
             // 
             NmrSoLuong.Increment = new decimal(new int[] { 1, 0, 0, 0 });
-            NmrSoLuong.Location = new Point(528, 54);
+            NmrSoLuong.Location = new Point(574, 54);
             NmrSoLuong.Maximum = new decimal(new int[] { 9999, 0, 0, 0 });
             NmrSoLuong.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             NmrSoLuong.Name = "NmrSoLuong";
@@ -325,7 +325,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 391);
+            ClientSize = new Size(844, 391);
             Controls.Add(dvtinhwarn);
             Controls.Add(nccwarn);
             Controls.Add(pricewarn);

@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Runtime.InteropServices.JavaScript.JSType;
@@ -74,10 +75,11 @@ namespace QLST_rebase
 
         private void txtTenHang_Leave(object sender, EventArgs e)
         {
+            string pattern = @"^[a-zA-Z0-9\s.,]+$";
             var tb = txtTenHang.Text;
             string temp = "";
+            if (!Regex.IsMatch(tb, pattern)) temp = "Vui lòng nhập đúng định dạng";
             if (tb.IsNullOrEmpty()) temp = "Tên hàng không được để trống";
-            if (!tb.All(char.IsLetterOrDigit)) temp = "Vui lòng nhập đúng định dạng";
             if (temp != "")
             {
                 tempvalid[0] = false;
@@ -112,8 +114,8 @@ namespace QLST_rebase
         {
             var tb = txtGiaTien.Text;
             string temp = "";
-            if (tb.IsNullOrEmpty()) temp = "Giá tiền không được để trống";
             if (!tb.All(char.IsDigit)) temp = "Vui lòng nhập đúng định dạng";
+            if (tb.IsNullOrEmpty()) temp = "Giá tiền không được để trống";
             if (!temp.IsNullOrEmpty())
             {
                 tempvalid[2] = false;
@@ -131,10 +133,11 @@ namespace QLST_rebase
 
         private void txtNhaCC_Leave(object sender, EventArgs e)
         {
+            string pattern = @"^[a-zA-Z0-9\s.,]+$";
             string tb = txtNhaCC.Text;
             string temp = "";
+            if (!Regex.IsMatch(tb, pattern)) temp = "Vui lòng nhập đúng định dạng";
             if (tb.IsNullOrEmpty()) temp = "Tên hàng không được để trống";
-            if (!tb.All(char.IsLetterOrDigit)) temp = "Vui lòng nhập đúng định dạng";
             if (!temp.IsNullOrEmpty())
             {
                 tempvalid[3] = false;
@@ -150,10 +153,11 @@ namespace QLST_rebase
         }
         private void txtDonViTinh_Leave(object sender, EventArgs e)
         {
+            string pattern = @"^[a-zA-Z0-9\s.,]+$";
             string tb = txtDonViTinh.Text;
             string temp = "";
+            if (!Regex.IsMatch(tb, pattern)) temp = "Vui lòng nhập đúng định dạng";
             if (tb.IsNullOrEmpty()) temp = "Tên hàng không được để trống";
-            if (!tb.All(char.IsLetterOrDigit)) temp = "Vui lòng nhập đúng định dạng";
             if (!temp.IsNullOrEmpty())
             {
                 tempvalid[4] = false;

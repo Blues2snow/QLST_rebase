@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -82,10 +83,12 @@ namespace QLST_rebase
 
         private void txtTenNV_Leave(object sender, EventArgs e)
         {
+            string pattern = @"^[a-zA-Z\s]+$";
             string tb = txtTenNV.Text;
             string temp = "";
-            if (tb.IsNullOrEmpty()) temp = "Tên hàng không được để trống";
-            if (!tb.All(char.IsLetter)) temp = "Vui lòng nhập đúng định dạng";
+            if (!Regex.IsMatch(tb, pattern)) temp = "Vui lòng nhập đúng định dạng";
+            if (tb.Length < 2 || tb.Length > 30) temp = "Tên nhân viên từ 2-30 ký tự";
+            if (tb.IsNullOrEmpty()) temp = "Tên nhân viên không được để trống";
             if (temp != "")
             {
                 tempvalid[0] = false;
@@ -118,10 +121,11 @@ namespace QLST_rebase
 
         private void txtDiaChi_Leave(object sender, EventArgs e)
         {
+            string pattern = @"^[a-zA-Z0-9\s.,]*$";
             string tb = txtDiaChi.Text;
             string temp = "";
+            if (!Regex.IsMatch(tb, pattern)) temp = "Vui lòng nhập đúng định dạng";
             if (tb.IsNullOrEmpty()) temp = "Địa chỉ không được để trống";
-            if (!tb.All(char.IsLetterOrDigit)) temp = "Vui lòng nhập đúng định dạng";
             if (temp != "")
             {
                 tempvalid[2] = false;
@@ -141,8 +145,16 @@ namespace QLST_rebase
         {
             string tb = txtLuong.Text;
             string temp = "";
+            try
+            {
+                if (double.Parse(tb) < 1000 || double.Parse(tb) > 100000000)
+                    temp = "Lương từ 1.000 đến 100.000.000";
+            }
+            catch (Exception)
+            {
+                temp = "Vui lòng nhập đúng định dạng";
+            }
             if (tb.IsNullOrEmpty()) temp = "Lương không được để trống";
-            if (!tb.All(char.IsDigit)) temp = "Vui lòng nhập đúng định dạng";
             if (temp != "")
             {
                 tempvalid[3] = false;
@@ -163,8 +175,8 @@ namespace QLST_rebase
             EmailAddressAttribute email = new();
             string tb = txtEmail.Text;
             string temp = "";
-            if (tb.IsNullOrEmpty()) temp = "Email không được để trống";
             if (!email.IsValid(tb)) temp = "Vui lòng nhập đúng định dạng";
+            if (tb.IsNullOrEmpty()) temp = "Email không được để trống";
             if (temp != "")
             {
                 tempvalid[4] = false;
@@ -185,7 +197,7 @@ namespace QLST_rebase
             string tb = txtSDT.Text;
             string temp = "";
             if (tb.IsNullOrEmpty()) temp = "Email không được để trống";
-            if (!tb.All(char.IsDigit) || !tb.StartsWith("0")) temp = "Vui lòng nhập đúng định dạng";
+            if (!tb.All(char.IsDigit) || !tb.StartsWith("0") || tb.Length != 10) temp = "Vui lòng nhập đúng định dạng";
             if (temp != "")
             {
                 tempvalid[5] = false;

@@ -20,14 +20,14 @@ namespace QLST_rebase
 
         private void UC_QLNV_Load(object sender, EventArgs e)
         {
-            lbDate.Text = DateTime.Now.ToLongDateString();
-            lbTime.Text = DateTime.Now.ToShortTimeString();
+            lbDate.Content = DateTime.Now.ToShortDateString();
+            lbTime.Content = DateTime.Now.ToShortTimeString();
             LoadDgv();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            lbTime.Text = DateTime.Now.ToShortTimeString();
+            lbTime.Content = DateTime.Now.ToShortTimeString();
             timer1.Start();
         }
 

@@ -1,4 +1,5 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using Avalonia.Markup.Xaml.MarkupExtensions;
+using Microsoft.Data.SqlClient;
 using Microsoft.IdentityModel.Tokens;
 using QLST_rebase.DAO;
 using System;
@@ -9,6 +10,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
@@ -40,41 +42,42 @@ namespace QLST_rebase
                 AddNV(txtTenNV.Text, dtNgaySinh.Text, cbGioiTinh.Text, txtDiaChi.Text, txtLuong.Text, txtEmail.Text, txtSDT.Text, cbChucVu.Text);
         }
 
-        public void AddNV(string TenNV, string BirthDate, string gender, string addres, string salary, string email, string phonenumber, string position)
+        public void AddNV(string TenNV, string BirthDate, string gender, string addres, string salary, string emails, string phonenumber, string position)
         {
-            try //1
-            {
-                if (TenNV != "" && BirthDate != "" && gender != "" && addres != "" && salary != "" && position != "")
+            string pattern1 = @"^[a-zA-Z\s]+$"; 
+            string pattern2 = @"^[a-zA-Z0-9\s.,]+$"; //1
+            EmailAddressAttribute email = new();
+            try
+            {   
+                if (!(TenNV != "" && BirthDate != "" && gender != "" && addres != "" && salary != "" && position != "")) //2,3,4,5,6,7
+                    throw new Exception(); //8
+                if (!(phonenumber.Length == 10 && phonenumber.StartsWith("0"))) //9,10
+                    throw new Exception(); //11
+                if (!email.IsValid(emails)) //12
+                    throw new Exception(); //13
+                if(!(Regex.IsMatch(TenNV, pattern1) && Regex.IsMatch(addres, pattern2))) //14,15
+                    throw new Exception(); //16
+                using (DataDBContext context = new()) //17
                 {
-                    if (phonenumber.Length == 10)
+                    var staff = new staff
                     {
-                        using (DataDBContext context = new())
-                        {
-                            var staff = new staff
-                            {
-                                staffName = TenNV,
-                                birthDate = DateOnly.Parse(BirthDate),
-                                gender = gender,
-                                address = addres,
-                                salary = double.Parse(salary),
-                                email = email,
-                                phoneNumber = phonenumber,
-                                position = position 
-                            };
-                            context.staffs.Add(staff); 
-                            context.SaveChanges();
-                            MessageBox.Show("Thêm thành công!");   
-                        }
-                    }
-                    else
-                        MessageBox.Show("Vui lòng kiểm tra lại thông tin");
+                        staffName = TenNV,
+                        gender = gender,
+                        address = addres,
+                        email = emails,                 //18
+                        phoneNumber = phonenumber,
+                        position = position,
+                        birthDate = DateOnly.Parse(BirthDate), //19
+                        salary = double.Parse(salary) //20
+                    };
+                    context.staffs.Add(staff);
+                    context.SaveChanges();                      //21
+                    MessageBox.Show("Thêm thành công!");
                 }
-                else
-                    MessageBox.Show("Vui lòng kiểm tra lại thông tin");
             }
-            catch (Exception)
+            catch (Exception) //22
             {
-                MessageBox.Show("Vui lòng kiểm tra lại thông tin");
+                MessageBox.Show("Vui lòng kiểm tra lại thông tin"); //23
             }
         }
 
@@ -86,10 +89,12 @@ namespace QLST_rebase
 
         private void txtTenNV_Leave(object sender, EventArgs e)
         {
+            string pattern = @"^[a-zA-Z\s]+$";
             string tb = txtTenNV.Text;
             string temp = "";
-            if (tb.IsNullOrEmpty()) temp = "Tên hàng không được để trống";
-            if (!tb.All(char.IsLetter)) temp = "Vui lòng nhập đúng định dạng";
+            if (!Regex.IsMatch(tb, pattern)) temp = "Vui lòng nhập đúng định dạng";
+            if (tb.Length < 2 || tb.Length > 30) temp = "Tên nhân viên từ 2-30 ký tự";
+            if (tb.IsNullOrEmpty()) temp = "Tên nhân viên không được để trống";
             if (temp != "")
             {
                 tempvalid[0] = false;
@@ -122,10 +127,11 @@ namespace QLST_rebase
 
         private void txtDiaChi_Leave(object sender, EventArgs e)
         {
+            string pattern = @"^[a-zA-Z0-9\s.,]*$";
             string tb = txtDiaChi.Text;
             string temp = "";
+            if (!Regex.IsMatch(tb, pattern)) temp = "Vui lòng nhập đúng định dạng";
             if (tb.IsNullOrEmpty()) temp = "Địa chỉ không được để trống";
-            if (!tb.All(char.IsLetterOrDigit)) temp = "Vui lòng nhập đúng định dạng";
             if (temp != "")
             {
                 tempvalid[2] = false;
@@ -145,8 +151,16 @@ namespace QLST_rebase
         {
             string tb = txtLuong.Text;
             string temp = "";
+            try
+            {
+                if (double.Parse(tb) < 1000 || double.Parse(tb) > 100000000)
+                    temp = "Lương từ 1.000 đến 100.000.000";
+            }
+            catch (Exception)
+            {
+                temp = "Vui lòng nhập đúng định dạng";
+            }
             if (tb.IsNullOrEmpty()) temp = "Lương không được để trống";
-            if (!tb.All(char.IsDigit)) temp = "Vui lòng nhập đúng định dạng";
             if (temp != "")
             {
                 tempvalid[3] = false;
@@ -167,8 +181,8 @@ namespace QLST_rebase
             EmailAddressAttribute email = new();
             string tb = txtEmail.Text;
             string temp = "";
-            if (tb.IsNullOrEmpty()) temp = "Email không được để trống"; else
             if (!email.IsValid(tb)) temp = "Vui lòng nhập đúng định dạng";
+            if (tb.IsNullOrEmpty()) temp = "Email không được để trống";
             if (temp != "")
             {
                 tempvalid[4] = false;
@@ -189,7 +203,7 @@ namespace QLST_rebase
             string tb = txtSDT.Text;
             string temp = "";
             if (tb.IsNullOrEmpty()) temp = "Email không được để trống";
-            if (!tb.All(char.IsDigit) || !tb.StartsWith("0")) temp = "Vui lòng nhập đúng định dạng";
+            if (!tb.All(char.IsDigit) || !tb.StartsWith("0") || tb.Length != 10) temp = "Vui lòng nhập đúng định dạng";
             if (temp != "")
             {
                 tempvalid[5] = false;

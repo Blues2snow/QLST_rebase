@@ -388,7 +388,7 @@
             Controls.Add(cbGioiTinh);
             Controls.Add(txtSDT);
             Name = "FEditNV";
-            Text = "FEditNV";
+            Text = "Sửa nhân viên";
             Load += FEditNV_Load;
             ResumeLayout(false);
             PerformLayout();
